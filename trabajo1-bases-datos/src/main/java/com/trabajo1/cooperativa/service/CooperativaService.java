@@ -5,6 +5,8 @@ import com.trabajo1.cooperativa.model.*;
 import java.math.BigDecimal;
 import java.util.*;
 
+import java.time.YearMonth;
+
 public class CooperativaService {
 
     private final Map<String, Socio> socios =
@@ -232,5 +234,61 @@ public class CooperativaService {
         return servicio;
     }
 
+    public void aplicarInteresMensual(String numeroCuenta) {
+
+        Cuenta cuenta = buscarCuenta(numeroCuenta);
+
+        // Solo las cuentas de ahorro generan intereses
+        if (!(cuenta instanceof CuentaAhorros ahorros)) {
+            throw new IllegalArgumentException(
+                    "La cuenta no es de ahorros");
+        }
+
+        if (!cuenta.isActiva()) {
+            throw new IllegalStateException(
+                    "No se pueden aplicar intereses a una cuenta inactiva");
+        }
+
+        String mesActual = YearMonth.now().toString();
+
+        // Evitar aplicar intereses dos veces en el mismo mes
+        for (Movimiento movimiento : movimientos) {
+            if (movimiento.getNumeroCuenta().equals(numeroCuenta)
+                    && movimiento.getTipo() == TipoMovimiento.INTERES
+                    && movimiento.getFechaHora().startsWith(mesActual)) {
+
+                throw new IllegalStateException(
+                        "Los intereses de este mes ya fueron aplicados");
+            }
+        }
+
+        BigDecimal interes = ahorros.calcularInteresMensual();
+
+        if (interes.signum() <= 0) {
+            throw new IllegalStateException(
+                    "No existe interes positivo para acreditar");
+        }
+
+        // Acreditar el interes
+        ahorros.depositar(interes);
+
+        // Registrar en el historial
+        registrarMovimiento(
+                ahorros,
+                TipoMovimiento.INTERES,
+                interes,
+                null
+        );
+    }
+
+    public void cerrarCuenta(String numeroCuenta) {
+
+        Cuenta cuenta = buscarCuenta(numeroCuenta);
+
+        // La propia clase Cuenta valida:
+        // 1. Que la cuenta este activa.
+        // 2. Que su saldo sea exactamente cero.
+        cuenta.cerrarCuenta();
+    }
 
 }
