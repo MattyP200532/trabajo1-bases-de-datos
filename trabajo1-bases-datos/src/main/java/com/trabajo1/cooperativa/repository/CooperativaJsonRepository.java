@@ -23,8 +23,22 @@ public class CooperativaJsonRepository {
             .setPrettyPrinting()
             .create();
 
-    private final Path archivo = Path.of(
-            "data", "cooperativa", "estado.json");
+    
+        private final Path archivo;
+
+        public CooperativaJsonRepository() {
+        this(Path.of("data", "cooperativa", "estado.json"));
+        }
+
+        public CooperativaJsonRepository(Path archivo) {
+        if (archivo == null) {
+                throw new IllegalArgumentException(
+                        "La ruta del archivo es obligatoria");
+        }
+
+        this.archivo = archivo;
+        }
+
 
     // Representa una cuenta en formato JSON.
     private record CuentaDato(
