@@ -27,6 +27,32 @@ public abstract class Cuenta {
         this.activa = true;
     }
 
+
+    protected Cuenta(String numeroCuenta,
+                    String idSocio,
+                    BigDecimal saldoGuardado,
+                    boolean activa) {
+
+        if (numeroCuenta == null || numeroCuenta.isBlank()
+                || idSocio == null || idSocio.isBlank()
+                || saldoGuardado == null) {
+            throw new IllegalArgumentException(
+                    "Datos de cuenta invalidos");
+        }
+
+        if (!activa &&
+                saldoGuardado.compareTo(BigDecimal.ZERO) != 0) {
+            throw new IllegalArgumentException(
+                    "Una cuenta inactiva debe tener saldo cero");
+        }
+
+        this.numeroCuenta = numeroCuenta;
+        this.idSocio = idSocio;
+        this.saldo = saldoGuardado;
+        this.activa = activa;
+    }
+
+
     public String getNumeroCuenta() {
         return numeroCuenta;
     }

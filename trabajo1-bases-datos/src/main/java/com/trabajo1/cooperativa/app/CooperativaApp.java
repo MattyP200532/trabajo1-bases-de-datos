@@ -4,6 +4,7 @@ package com.trabajo1.cooperativa.app;
 import com.trabajo1.cooperativa.model.*;
 import com.trabajo1.cooperativa.service.CooperativaService;
 import java.math.BigDecimal;
+import com.trabajo1.cooperativa.repository.CooperativaJsonRepository;
 
 public class CooperativaApp {
 
@@ -31,11 +32,13 @@ public class CooperativaApp {
                 "A001", "C001",
                 new BigDecimal("25.00"));
 
-        System.out.println("Saldo ahorros: $" +
+        
+        System.out.println("Cuenta de ahorros A001: $" +
                 servicio.consultarSaldo("A001"));
 
-        System.out.println("Saldo corriente: $" +
+        System.out.println("Cuenta corriente C001: $" +
                 servicio.consultarSaldo("C001"));
+
 
         System.out.println("Movimientos de ahorros:");
 
@@ -43,5 +46,14 @@ public class CooperativaApp {
                 servicio.consultarMovimientos("A001")) {
             System.out.println(m);
         }
+
+        CooperativaJsonRepository repositorio =
+                new CooperativaJsonRepository();
+
+        repositorio.guardar(servicio);
+
+        System.out.println("Estado guardado correctamente en JSON");
+
     }
 }
+

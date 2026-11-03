@@ -20,4 +20,30 @@ public class CuentaCorriente extends Cuenta {
         return nuevoSaldo.compareTo(
                 LIMITE_SOBREGIRO.negate()) >= 0;
     }
+
+
+    private CuentaCorriente(String numeroCuenta,
+                            String idSocio,
+                            BigDecimal saldoGuardado,
+                            boolean activa) {
+
+        super(numeroCuenta, idSocio, saldoGuardado, activa);
+
+        if (saldoGuardado.compareTo(
+                LIMITE_SOBREGIRO.negate()) < 0) {
+            throw new IllegalArgumentException(
+                    "El sobregiro guardado supera el limite");
+        }
+    }
+
+    public static CuentaCorriente desdeArchivo(
+            String numeroCuenta,
+            String idSocio,
+            BigDecimal saldoGuardado,
+            boolean activa) {
+
+        return new CuentaCorriente(
+                numeroCuenta, idSocio, saldoGuardado, activa);
+    }
+
 }

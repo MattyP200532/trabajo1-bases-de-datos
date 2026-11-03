@@ -169,4 +169,68 @@ public class CooperativaService {
 
         movimientos.add(movimiento);
     }
+
+    public List<Socio> listarSocios() {
+        return List.copyOf(socios.values());
+    }
+
+    public List<Cuenta> listarCuentas() {
+        return List.copyOf(cuentas.values());
+    }
+
+    public List<Movimiento> listarMovimientos() {
+        return List.copyOf(movimientos);
+    }   
+    
+    
+    public static CooperativaService desdeArchivo(
+            List<Socio> sociosGuardados,
+            List<Cuenta> cuentasGuardadas,
+            List<Movimiento> movimientosGuardados) {
+
+        if (sociosGuardados == null ||
+                cuentasGuardadas == null ||
+                movimientosGuardados == null) {
+            throw new IllegalArgumentException(
+                    "Los datos guardados estan incompletos");
+        }
+
+        CooperativaService servicio = new CooperativaService();
+
+        // Recuperar socios
+        for (Socio socio : sociosGuardados) {
+            servicio.registrarSocio(socio);
+        }
+
+        // Recuperar cuentas sin crear depositos nuevos
+        for (Cuenta cuenta : cuentasGuardadas) {
+            if (cuenta == null ||
+                    !servicio.socios.containsKey(cuenta.getIdSocio())) {
+                throw new IllegalArgumentException(
+                        "Cuenta sin socio valido");
+            }
+
+            if (servicio.cuentas.putIfAbsent(
+                    cuenta.getNumeroCuenta(), cuenta) != null) {
+                throw new IllegalArgumentException(
+                        "Cuenta duplicada en el archivo");
+            }
+        }
+
+        // Recuperar movimientos originales
+        for (Movimiento movimiento : movimientosGuardados) {
+            if (movimiento == null ||
+                    !servicio.cuentas.containsKey(
+                            movimiento.getNumeroCuenta())) {
+                throw new IllegalArgumentException(
+                        "Movimiento con cuenta invalida");
+            }
+
+            servicio.movimientos.add(movimiento);
+        }
+
+        return servicio;
+    }
+
+
 }

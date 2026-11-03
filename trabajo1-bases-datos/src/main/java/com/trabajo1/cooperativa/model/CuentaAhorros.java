@@ -35,4 +35,29 @@ public class CuentaAhorros extends Cuenta {
                 .divide(new BigDecimal("12"),
                         2, RoundingMode.HALF_UP);
     }
+
+    private CuentaAhorros(String numeroCuenta,
+                        String idSocio,
+                        BigDecimal saldoGuardado,
+                        boolean activa) {
+
+        super(numeroCuenta, idSocio, saldoGuardado, activa);
+
+        if (activa &&
+                saldoGuardado.compareTo(SALDO_MINIMO) < 0) {
+            throw new IllegalArgumentException(
+                    "Saldo de ahorros guardado invalido");
+        }
+    }
+
+    public static CuentaAhorros desdeArchivo(
+            String numeroCuenta,
+            String idSocio,
+            BigDecimal saldoGuardado,
+            boolean activa) {
+
+        return new CuentaAhorros(
+                numeroCuenta, idSocio, saldoGuardado, activa);
+    }
+
 }
