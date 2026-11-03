@@ -1,0 +1,92 @@
+
+package com.trabajo1.cooperativa.model;
+
+import java.math.BigDecimal;
+
+public abstract class Cuenta {
+
+    private final String numeroCuenta;
+    private final String idSocio;
+    private BigDecimal saldo;
+    private boolean activa;
+
+    public Cuenta(String numeroCuenta, String idSocio,
+                  BigDecimal saldoInicial) {
+
+        if (numeroCuenta == null || numeroCuenta.isBlank()
+                || idSocio == null || idSocio.isBlank()
+                || saldoInicial == null
+                || saldoInicial.signum() < 0) {
+            throw new IllegalArgumentException(
+                "Datos de cuenta invalidos");
+        }
+
+        this.numeroCuenta = numeroCuenta;
+        this.idSocio = idSocio;
+        this.saldo = saldoInicial;
+        this.activa = true;
+    }
+
+    public String getNumeroCuenta() {
+        return numeroCuenta;
+    }
+
+    public String getIdSocio() {
+        return idSocio;
+    }
+
+    public BigDecimal getSaldo() {
+        return saldo;
+    }
+
+    public boolean isActiva() {
+        return activa;
+    }
+
+    public void depositar(BigDecimal monto) {
+        validarOperacion(monto);
+        saldo = saldo.add(monto);
+    }
+
+    public void retirar(BigDecimal monto) {
+        validarOperacion(monto);
+
+        BigDecimal nuevoSaldo = saldo.subtract(monto);
+
+        if (!saldoPermitido(nuevoSaldo)) {
+            throw new IllegalArgumentException(
+                "La operacion supera el saldo permitido");
+        }
+
+        saldo = nuevoSaldo;
+    }
+
+    public void cerrarCuenta() {
+        if (!activa) {
+            throw new IllegalStateException(
+                "La cuenta ya esta inactiva");
+        }
+
+        if (saldo.compareTo(BigDecimal.ZERO) != 0) {
+            throw new IllegalStateException(
+                "Solo se pueden cerrar cuentas con saldo cero");
+        }
+
+        activa = false;
+    }
+
+    protected void validarOperacion(BigDecimal monto) {
+        if (!activa) {
+            throw new IllegalStateException(
+                "La cuenta esta inactiva");
+        }
+
+        if (monto == null || monto.signum() <= 0) {
+            throw new IllegalArgumentException(
+                "El monto debe ser mayor que cero");
+        }
+    }
+
+    protected abstract boolean saldoPermitido(
+            BigDecimal nuevoSaldo);
+}
