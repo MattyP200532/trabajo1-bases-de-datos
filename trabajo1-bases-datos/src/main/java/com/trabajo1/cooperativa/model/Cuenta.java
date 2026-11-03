@@ -89,4 +89,41 @@ public abstract class Cuenta {
 
     protected abstract boolean saldoPermitido(
             BigDecimal nuevoSaldo);
+
+    
+    public void transferirA(Cuenta destino, BigDecimal monto) {
+
+        if (destino == null) {
+            throw new IllegalArgumentException(
+                    "La cuenta destino no existe");
+        }
+
+        if (this == destino ||
+                numeroCuenta.equals(destino.numeroCuenta)) {
+            throw new IllegalArgumentException(
+                    "No se puede transferir a la misma cuenta");
+        }
+
+        validarOperacion(monto);
+        destino.validarOperacion(monto);
+
+        BigDecimal nuevoSaldoOrigen = saldo.subtract(monto);
+
+        if (!saldoPermitido(nuevoSaldoOrigen)) {
+            throw new IllegalArgumentException(
+                    "Saldo insuficiente para transferir");
+        }
+
+        BigDecimal nuevoSaldoDestino = destino.saldo.add(monto);
+
+        if (!destino.saldoPermitido(nuevoSaldoDestino)) {
+            throw new IllegalArgumentException(
+                    "Saldo destino no permitido");
+        }
+
+        // Ambos saldos se modifican despues de validar todo.
+        this.saldo = nuevoSaldoOrigen;
+        destino.saldo = nuevoSaldoDestino;
+    }
+
 }
