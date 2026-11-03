@@ -291,4 +291,29 @@ public class CooperativaService {
         cuenta.cerrarCuenta();
     }
 
+    public BigDecimal liquidarCuentaAhorros(
+            String numeroCuenta) {
+
+        Cuenta cuenta = buscarCuenta(numeroCuenta);
+
+        if (!(cuenta instanceof CuentaAhorros)) {
+            throw new IllegalArgumentException(
+                    "Solo se permite liquidar cuentas de ahorros");
+        }
+
+        BigDecimal monto = cuenta.liquidarYCerrar();
+
+        // Registrar el dinero retirado al cerrar la cuenta.
+        if (monto.signum() > 0) {
+            registrarMovimiento(
+                    cuenta,
+                    TipoMovimiento.RETIRO,
+                    monto,
+                    null
+            );
+        }
+
+        return monto;
+    }
+
 }

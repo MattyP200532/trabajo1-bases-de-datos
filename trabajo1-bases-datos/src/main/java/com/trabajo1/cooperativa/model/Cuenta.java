@@ -152,4 +152,25 @@ public abstract class Cuenta {
         destino.saldo = nuevoSaldoDestino;
     }
 
+    public BigDecimal liquidarYCerrar() {
+
+        if (!activa) {
+            throw new IllegalStateException(
+                    "La cuenta ya esta inactiva");
+        }
+
+        if (saldo.compareTo(BigDecimal.ZERO) < 0) {
+            throw new IllegalStateException(
+                    "No se puede liquidar una cuenta con deuda");
+        }
+
+        BigDecimal montoLiquidado = saldo;
+
+        // Se retira todo el dinero para el cierre definitivo.
+        saldo = BigDecimal.ZERO;
+        activa = false;
+
+        return montoLiquidado;
+    }
+
 }
