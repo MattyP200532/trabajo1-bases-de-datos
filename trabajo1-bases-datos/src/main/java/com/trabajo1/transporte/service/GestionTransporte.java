@@ -14,8 +14,10 @@ public class GestionTransporte {
     }
 
     public GestionTransporte(List<Viaje> viajes, List<Boleto> boletos) {
-        if (viajes != null) this.viajes.addAll(viajes);
-        if (boletos != null) this.boletos.addAll(boletos);
+        if (viajes != null)
+            this.viajes.addAll(viajes);
+        if (boletos != null)
+            this.boletos.addAll(boletos);
     }
 
     // Registrar un viaje
@@ -26,22 +28,24 @@ public class GestionTransporte {
         if (buscarViaje(viaje.getId()) != null)
             throw new IllegalArgumentException("El viaje ya existe");
 
-        String ruta = viaje.getRuta();
+        String ruta = viaje.getRuta().trim();
 
         if (!"Ibarra-Quito".equalsIgnoreCase(ruta) &&
-            !"Ibarra-Tulcán".equalsIgnoreCase(ruta) &&
-            !"Ibarra-Otavalo".equalsIgnoreCase(ruta))
+                !"Ibarra-Tulcán".equalsIgnoreCase(ruta) &&
+                !"Ibarra-Tulcan".equalsIgnoreCase(ruta) &&
+                !"Ibarra-Otavalo".equalsIgnoreCase(ruta)) {
             throw new IllegalArgumentException("Ruta no permitida");
+        }
 
         if (viaje.getCapacidad() <= 0 ||
-            !Double.isFinite(viaje.getTarifaBase()) ||
-            viaje.getTarifaBase() <= 0)
+                !Double.isFinite(viaje.getTarifaBase()) ||
+                viaje.getTarifaBase() <= 0)
             throw new IllegalArgumentException("Capacidad o tarifa incorrecta");
 
         String tipo = viaje.getTipo();
-        
+
         if (!"DIRECTO".equalsIgnoreCase(tipo) &&
-            !"CON_PARADAS".equalsIgnoreCase(tipo))
+                !"CON_PARADAS".equalsIgnoreCase(tipo))
             throw new IllegalArgumentException("Tipo de viaje incorrecto");
 
         if (viaje.getFechaSalida() == null)
@@ -54,7 +58,8 @@ public class GestionTransporte {
     // Buscar un viaje
     public Viaje buscarViaje(int id) {
         for (Viaje viaje : viajes) {
-            if (viaje.getId() == id) return viaje;
+            if (viaje.getId() == id)
+                return viaje;
         }
         return null;
     }
@@ -62,7 +67,8 @@ public class GestionTransporte {
     // Buscar un boleto
     public Boleto buscarBoleto(int id) {
         for (Boleto boleto : boletos) {
-            if (boleto.getId() == id) return boleto;
+            if (boleto.getId() == id)
+                return boleto;
         }
         return null;
     }
@@ -71,8 +77,8 @@ public class GestionTransporte {
     public boolean asientoOcupado(int idViaje, int asiento) {
         for (Boleto boleto : boletos) {
             if (boleto.getIdViaje() == idViaje &&
-                boleto.getAsiento() == asiento &&
-                "ACTIVO".equals(boleto.getEstado()))
+                    boleto.getAsiento() == asiento &&
+                    "ACTIVO".equals(boleto.getEstado()))
                 return true;
         }
         return false;
@@ -87,7 +93,7 @@ public class GestionTransporte {
         int ocupados = 0;
         for (Boleto boleto : boletos) {
             if (boleto.getIdViaje() == idViaje &&
-                "ACTIVO".equals(boleto.getEstado()))
+                    "ACTIVO".equals(boleto.getEstado()))
                 ocupados++;
         }
         return viaje.getCapacidad() - ocupados;
@@ -111,8 +117,8 @@ public class GestionTransporte {
             throw new IllegalArgumentException("El asiento esta ocupado");
 
         if (pasajero == null || pasajero.getCedula() == null ||
-            pasajero.getCedula().isBlank() || pasajero.getNombre() == null ||
-            pasajero.getNombre().isBlank())
+                pasajero.getCedula().isBlank() || pasajero.getNombre() == null ||
+                pasajero.getNombre().isBlank())
             throw new IllegalArgumentException("Datos del pasajero incorrectos");
 
         double precio = viaje.getTarifaBase();
@@ -122,7 +128,7 @@ public class GestionTransporte {
 
         String tipo = pasajero.getTipo();
         if ("TERCERA_EDAD".equalsIgnoreCase(tipo) ||
-            "DISCAPACIDAD".equalsIgnoreCase(tipo))
+                "DISCAPACIDAD".equalsIgnoreCase(tipo))
             precio = precio * 0.50;
         else if (!"NORMAL".equalsIgnoreCase(tipo))
             throw new IllegalArgumentException("Tipo de pasajero incorrecto");
@@ -136,7 +142,7 @@ public class GestionTransporte {
         }
 
         Boleto nuevo = new Boleto(nuevoId, idViaje, pasajero,
-            asiento, precio, LocalDateTime.now().toString());
+                asiento, precio, LocalDateTime.now().toString());
 
         boletos.add(nuevo);
         return nuevo;
@@ -160,7 +166,7 @@ public class GestionTransporte {
 
         if (LocalDateTime.now().isAfter(salida.minusHours(2)))
             throw new IllegalArgumentException(
-                "Solo se puede anular hasta 2 horas antes de la salida");
+                    "Solo se puede anular hasta 2 horas antes de la salida");
 
         boleto.anular(LocalDateTime.now().toString());
     }
@@ -175,7 +181,7 @@ public class GestionTransporte {
         for (Boleto boleto : boletos) {
             if (boleto.getIdViaje() == idViaje)
                 throw new IllegalArgumentException(
-                    "No se puede eliminar un viaje con boletos vendidos");
+                        "No se puede eliminar un viaje con boletos vendidos");
         }
         viajes.remove(viaje);
     }
