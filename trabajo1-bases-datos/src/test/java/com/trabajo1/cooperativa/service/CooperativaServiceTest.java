@@ -118,4 +118,43 @@ public class CooperativaServiceTest {
         assertThrows(IllegalStateException.class,
             () -> servicio.aplicarInteresMensual("A001"));
     }
+
+    @Test
+    public void rechazarDepositoConTresDecimales() {
+
+        assertThrows(IllegalArgumentException.class,
+            () -> servicio.depositar(
+                "A001", new BigDecimal("10.123")));
+
+        assertEquals(0,
+            servicio.consultarSaldo("A001")
+                .compareTo(new BigDecimal("100.00")));
+    }
+
+    @Test
+    public void rechazarTransferenciaConTresDecimales() {
+
+        assertThrows(IllegalArgumentException.class,
+            () -> servicio.transferir(
+                "A001", "C001",
+                new BigDecimal("5.123")));
+
+        assertEquals(0,
+            servicio.consultarSaldo("A001")
+                .compareTo(new BigDecimal("100.00")));
+
+        assertEquals(0,
+            servicio.consultarSaldo("C001")
+                .compareTo(BigDecimal.ZERO));
+    }
+
+    @Test
+    public void rechazarSaldoInicialConTresDecimales() {
+
+        assertThrows(IllegalArgumentException.class,
+            () -> new CuentaAhorros(
+                "A999", "S001",
+                new BigDecimal("50.123")));
+    }
+
 }

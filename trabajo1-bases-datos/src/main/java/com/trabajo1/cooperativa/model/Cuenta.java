@@ -20,7 +20,7 @@ public abstract class Cuenta {
             throw new IllegalArgumentException(
                 "Datos de cuenta invalidos");
         }
-
+        validarPrecision(saldoInicial);
         this.numeroCuenta = numeroCuenta;
         this.idSocio = idSocio;
         this.saldo = saldoInicial;
@@ -45,7 +45,7 @@ public abstract class Cuenta {
             throw new IllegalArgumentException(
                     "Una cuenta inactiva debe tener saldo cero");
         }
-
+        validarPrecision(saldoGuardado);
         this.numeroCuenta = numeroCuenta;
         this.idSocio = idSocio;
         this.saldo = saldoGuardado;
@@ -101,17 +101,22 @@ public abstract class Cuenta {
         activa = false;
     }
 
+
     protected void validarOperacion(BigDecimal monto) {
+
         if (!activa) {
             throw new IllegalStateException(
-                "La cuenta esta inactiva");
+                    "La cuenta esta inactiva");
         }
 
         if (monto == null || monto.signum() <= 0) {
             throw new IllegalArgumentException(
-                "El monto debe ser mayor que cero");
+                    "El monto debe ser mayor que cero");
         }
+
+        validarPrecision(monto);
     }
+
 
     protected abstract boolean saldoPermitido(
             BigDecimal nuevoSaldo);
@@ -171,6 +176,16 @@ public abstract class Cuenta {
         activa = false;
 
         return montoLiquidado;
+    }
+
+    private static void validarPrecision(BigDecimal monto) {
+
+        if (monto != null &&
+                monto.stripTrailingZeros().scale() > 2) {
+
+            throw new IllegalArgumentException(
+                    "El monto no puede tener mas de dos decimales");
+        }
     }
 
 }
