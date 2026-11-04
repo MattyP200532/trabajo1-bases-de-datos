@@ -1,0 +1,10 @@
+[
+  {
+    "id": "D001",
+    "ventaId": "V001",
+    "recepcionId": "R001",
+    "artesaniaId": "AR001",
+    "cantidad": 2,
+    "precioUnitario": 15.00
+  }
+]

@@ -1,0 +1,9 @@
+[
+  {
+    "id": "R001",
+    "artesanoId": "A001",
+    "artesaniaId": "AR001",
+    "cantidad": 10,
+    "fechaRecepcion": "2026-01-01"
+  }
+]
