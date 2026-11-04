@@ -8,7 +8,7 @@ import java.util.List;
 public class ComunidadService {
 
     private final JsonStorageService storage = new JsonStorageService();
-    private final String archivo = "data/comunidades.json";
+    private final String archivo = RutasDatos.archivo("comunidades.json");
     private final List<Comunidad> comunidades;
 
     public ComunidadService() {

@@ -11,7 +11,7 @@ import java.util.List;
 public class DevolucionService {
 
     private final JsonStorageService storage = new JsonStorageService();
-    private final String archivo = "data/devoluciones.json";
+    private final String archivo = RutasDatos.archivo("devoluciones.json");
     private final List<Devolucion> devoluciones;
 
     public DevolucionService() {

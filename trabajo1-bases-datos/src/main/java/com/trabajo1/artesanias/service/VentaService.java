@@ -12,7 +12,7 @@ import java.util.List;
 public class VentaService {
 
     private final JsonStorageService storage = new JsonStorageService();
-    private final String archivo = "data/ventas.json";
+    private final String archivo = RutasDatos.archivo("ventas.json");
     private final List<Venta> ventas;
 
     public VentaService() {

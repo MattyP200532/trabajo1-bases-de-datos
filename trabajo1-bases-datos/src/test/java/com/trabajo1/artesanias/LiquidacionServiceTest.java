@@ -19,12 +19,12 @@ public class LiquidacionServiceTest {
 
     @Before
     public void limpiarDatos() throws Exception {
-        Files.createDirectories(Path.of("data"));
-        Files.writeString(Path.of("data/artesanias.json"), "[]");
-        Files.writeString(Path.of("data/recepciones.json"), "[]");
-        Files.writeString(Path.of("data/detalles-venta.json"), "[]");
-        Files.writeString(Path.of("data/devoluciones.json"), "[]");
-        Files.writeString(Path.of("data/ventas.json"), "[]");
+        Files.createDirectories(Path.of("target/test-data/artesanias"));
+        Files.writeString(Path.of("target/test-data/artesanias/artesanias.json"), "[]");
+        Files.writeString(Path.of("target/test-data/artesanias/recepciones.json"), "[]");
+        Files.writeString(Path.of("target/test-data/artesanias/detalles-venta.json"), "[]");
+        Files.writeString(Path.of("target/test-data/artesanias/devoluciones.json"), "[]");
+        Files.writeString(Path.of("target/test-data/artesanias/ventas.json"), "[]");
     }
 
     @Test

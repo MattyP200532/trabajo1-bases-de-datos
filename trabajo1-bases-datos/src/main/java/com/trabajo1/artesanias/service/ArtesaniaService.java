@@ -8,7 +8,7 @@ import java.util.List;
 public class ArtesaniaService {
 
     private final JsonStorageService storage = new JsonStorageService();
-    private final String archivo = "data/artesanias.json";
+    private final String archivo = RutasDatos.archivo("artesanias.json");
     private final List<Artesania> artesanias;
 
     public ArtesaniaService() {

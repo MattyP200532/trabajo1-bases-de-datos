@@ -9,13 +9,13 @@ import java.util.List;
 public class ArtesanoService {
 
     private final JsonStorageService storage = new JsonStorageService();
-    private final String archivo = "data/artesanos.json";
+    private final String archivo = RutasDatos.archivo("artesanos.json");
     private final List<Artesano> artesanos;
     private final List<Artesania> artesanias;
 
     public ArtesanoService() {
         artesanos = storage.cargar(archivo, Artesano.class);
-        artesanias = storage.cargar("data/artesanias.json", Artesania.class);
+        artesanias = storage.cargar(RutasDatos.archivo("artesanias.json"), Artesania.class);
     }
 
     public void registrar(Artesano artesano) {

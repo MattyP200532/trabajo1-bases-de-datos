@@ -11,15 +11,15 @@ import java.util.List;
 public class RecepcionService {
 
     private final JsonStorageService storage = new JsonStorageService();
-    private final String archivo = "data/recepciones.json";
+    private final String archivo = RutasDatos.archivo("recepciones.json");
     private final List<Recepcion> recepciones;
     private final List<DetalleVenta> detallesVenta;
     private final List<Devolucion> devoluciones;
 
     public RecepcionService() {
         recepciones = storage.cargar(archivo, Recepcion.class);
-        detallesVenta = storage.cargar("data/detalles-venta.json", DetalleVenta.class);
-        devoluciones = storage.cargar("data/devoluciones.json", Devolucion.class);
+        detallesVenta = storage.cargar(RutasDatos.archivo("detalles-venta.json"), DetalleVenta.class);
+        devoluciones = storage.cargar(RutasDatos.archivo("devoluciones.json"), Devolucion.class);
     }
 
     public void registrar(Recepcion recepcion) {
@@ -74,7 +74,7 @@ public class RecepcionService {
         }
 
         detallesVenta.add(detalle);
-        storage.guardar(detallesVenta, "data/detalles-venta.json");
+        storage.guardar(detallesVenta, RutasDatos.archivo("detalles-venta.json"));
     }
 
     public void registrarDevolucion(Devolucion devolucion) {
@@ -92,7 +92,7 @@ public class RecepcionService {
         }
 
         devoluciones.add(devolucion);
-        storage.guardar(devoluciones, "data/devoluciones.json");
+        storage.guardar(devoluciones, RutasDatos.archivo("devoluciones.json"));
     }
 
     public List<DetalleVenta> listarDetallesVenta() {
