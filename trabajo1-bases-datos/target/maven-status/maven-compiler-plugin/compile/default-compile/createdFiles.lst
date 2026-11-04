@@ -1,6 +1,7 @@
 com\trabajo1\biblioteca\model\Ejemplar.class
 com\trabajo1\biblioteca\model\Libro.class
 com\trabajo1\biblioteca\model\Usuario.class
+com\trabajo1\biblioteca\service\PrestamoService.class
 com\trabajo1\biblioteca\model\Material.class
 com\trabajo1\App.class
 com\trabajo1\biblioteca\model\Prestamo.class
