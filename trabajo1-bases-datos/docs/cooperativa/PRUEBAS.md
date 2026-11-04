@@ -107,6 +107,28 @@ BUILD SUCCESS
 
 La ejecución terminó satisfactoriamente el 3 de noviembre de 2026 a las 23:10:42, sin presentar fallos ni errores en las pruebas ejecutadas.
 
+
+### 5.1. Evidencia de ejecución de pruebas
+
+La siguiente captura muestra los resultados generados
+por Maven Surefire para las tres clases de pruebas.
+
+Se ejecutaron 13 pruebas en total, sin fallos,
+errores ni pruebas omitidas.
+
+![Resultados de pruebas JUnit](evidencias/pruebas-junit.png)
+
+**Resultado:** 13 pruebas ejecutadas, 13 aprobadas,
+0 fallos y 0 errores.
+
+### 5.2. Compilación y pruebas exitosas
+
+La siguiente evidencia confirma que Maven finalizó
+correctamente la ejecución de las pruebas.
+
+![BUILD SUCCESS de Maven](evidencias/build-success.png)
+  
+
 ## 6. Conclusión
 
 Las pruebas automatizadas del Sistema de Cooperativa de Ahorro y Crédito finalizaron satisfactoriamente, con un total de 13 pruebas ejecutadas, 13 aprobadas, cero fallos y cero errores.
