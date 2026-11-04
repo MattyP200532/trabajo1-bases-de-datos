@@ -1,0 +1,81 @@
+[
+  {
+    "id": 1,
+    "idViaje": 1,
+    "pasajero": {
+      "cedula": "1000000000",
+      "nombre": "Alexis",
+      "tipo": "NORMAL"
+    },
+    "asiento": 5,
+    "precio": 10.0,
+    "fechaVenta": "2026-11-03T16:54:16.953935200",
+    "estado": "ACTIVO"
+  },
+  {
+    "id": 2,
+    "idViaje": 1,
+    "pasajero": {
+      "cedula": "1000000002",
+      "nombre": "Maria",
+      "tipo": "TERCERA_EDAD"
+    },
+    "asiento": 6,
+    "precio": 5.0,
+    "fechaVenta": "2026-11-03T17:02:44.279284100",
+    "estado": "ACTIVO"
+  },
+  {
+    "id": 3,
+    "idViaje": 1,
+    "pasajero": {
+      "cedula": "1000000003",
+      "nombre": "Pedro",
+      "tipo": "DISCAPACIDAD"
+    },
+    "asiento": 7,
+    "precio": 5.0,
+    "fechaVenta": "2026-11-03T17:04:55.896489500",
+    "estado": "ACTIVO"
+  },
+  {
+    "id": 4,
+    "idViaje": 2,
+    "pasajero": {
+      "cedula": "1000000004",
+      "nombre": "Luis",
+      "tipo": "NORMAL"
+    },
+    "asiento": 1,
+    "precio": 8.5,
+    "fechaVenta": "2026-11-03T17:08:30.844568800",
+    "estado": "ACTIVO"
+  },
+  {
+    "id": 5,
+    "idViaje": 2,
+    "pasajero": {
+      "cedula": "1000000005",
+      "nombre": "Rosa",
+      "tipo": "TERCERA_EDAD"
+    },
+    "asiento": 2,
+    "precio": 4.25,
+    "fechaVenta": "2026-11-03T17:10:02.861908500",
+    "fechaAnulacion": "2026-11-03T17:11:37.212318200",
+    "estado": "ANULADO"
+  },
+  {
+    "id": 6,
+    "idViaje": 2,
+    "pasajero": {
+      "cedula": "1000000006",
+      "nombre": "Andres",
+      "tipo": "NORMAL"
+    },
+    "asiento": 2,
+    "precio": 8.5,
+    "fechaVenta": "2026-11-03T17:17:52.598094600",
+    "estado": "ACTIVO"
+  }
+]

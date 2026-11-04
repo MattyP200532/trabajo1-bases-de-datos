@@ -22,4 +22,13 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
-/trabajo1-bases-datos/target/
+
+# Archivos generados por Maven
+target/
+
+# Configuración local de Visual Studio Code
+.vscode/
+
+# Archivos temporales
+*.tmp
+**/target/
