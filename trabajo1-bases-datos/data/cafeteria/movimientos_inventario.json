@@ -3,24 +3,520 @@
     "idMovimiento": 1,
     "idIngrediente": 1,
     "tipoMovimiento": "ABASTECIMIENTO",
-    "cantidad": 50,
-    "fecha": "2026-11-03T23:27:16.0919648",
+    "cantidad": 0.3,
+    "fecha": "2026-10-24T08:00:00",
     "descripcion": "Ingreso por abastecimiento"
   },
   {
     "idMovimiento": 2,
-    "idIngrediente": 1,
+    "idIngrediente": 2,
     "tipoMovimiento": "ABASTECIMIENTO",
     "cantidad": 10,
-    "fecha": "2026-11-04T10:30:07.7479712",
+    "fecha": "2026-10-24T08:04:00",
     "descripcion": "Ingreso por abastecimiento"
   },
   {
     "idMovimiento": 3,
+    "idIngrediente": 3,
+    "tipoMovimiento": "ABASTECIMIENTO",
+    "cantidad": 5,
+    "fecha": "2026-10-24T08:08:00",
+    "descripcion": "Ingreso por abastecimiento"
+  },
+  {
+    "idMovimiento": 4,
+    "idIngrediente": 4,
+    "tipoMovimiento": "ABASTECIMIENTO",
+    "cantidad": 0.9,
+    "fecha": "2026-10-24T08:12:00",
+    "descripcion": "Ingreso por abastecimiento"
+  },
+  {
+    "idMovimiento": 5,
+    "idIngrediente": 5,
+    "tipoMovimiento": "ABASTECIMIENTO",
+    "cantidad": 0.8,
+    "fecha": "2026-10-24T08:16:00",
+    "descripcion": "Ingreso por abastecimiento"
+  },
+  {
+    "idMovimiento": 6,
+    "idIngrediente": 6,
+    "tipoMovimiento": "ABASTECIMIENTO",
+    "cantidad": 0.9,
+    "fecha": "2026-10-24T08:20:00",
+    "descripcion": "Ingreso por abastecimiento"
+  },
+  {
+    "idMovimiento": 7,
+    "idIngrediente": 7,
+    "tipoMovimiento": "ABASTECIMIENTO",
+    "cantidad": 1,
+    "fecha": "2026-10-24T08:24:00",
+    "descripcion": "Ingreso por abastecimiento"
+  },
+  {
+    "idMovimiento": 8,
+    "idIngrediente": 8,
+    "tipoMovimiento": "ABASTECIMIENTO",
+    "cantidad": 0.2,
+    "fecha": "2026-10-24T08:28:00",
+    "descripcion": "Ingreso por abastecimiento"
+  },
+  {
+    "idMovimiento": 9,
+    "idIngrediente": 9,
+    "tipoMovimiento": "ABASTECIMIENTO",
+    "cantidad": 5,
+    "fecha": "2026-10-24T08:32:00",
+    "descripcion": "Ingreso por abastecimiento"
+  },
+  {
+    "idMovimiento": 10,
+    "idIngrediente": 10,
+    "tipoMovimiento": "ABASTECIMIENTO",
+    "cantidad": 1,
+    "fecha": "2026-10-24T08:36:00",
+    "descripcion": "Ingreso por abastecimiento"
+  },
+  {
+    "idMovimiento": 11,
+    "idIngrediente": 11,
+    "tipoMovimiento": "ABASTECIMIENTO",
+    "cantidad": 1.5,
+    "fecha": "2026-10-24T08:40:00",
+    "descripcion": "Ingreso por abastecimiento"
+  },
+  {
+    "idMovimiento": 12,
+    "idIngrediente": 1,
+    "tipoMovimiento": "ABASTECIMIENTO",
+    "cantidad": 0.36,
+    "fecha": "2026-10-26T08:00:00",
+    "descripcion": "Ingreso por abastecimiento"
+  },
+  {
+    "idMovimiento": 13,
+    "idIngrediente": 2,
+    "tipoMovimiento": "ABASTECIMIENTO",
+    "cantidad": 5.52,
+    "fecha": "2026-10-26T08:04:00",
+    "descripcion": "Ingreso por abastecimiento"
+  },
+  {
+    "idMovimiento": 14,
+    "idIngrediente": 3,
+    "tipoMovimiento": "ABASTECIMIENTO",
+    "cantidad": 2.59,
+    "fecha": "2026-10-26T08:08:00",
+    "descripcion": "Ingreso por abastecimiento"
+  },
+  {
+    "idMovimiento": 15,
+    "idIngrediente": 4,
+    "tipoMovimiento": "ABASTECIMIENTO",
+    "cantidad": 0.56,
+    "fecha": "2026-10-26T08:12:00",
+    "descripcion": "Ingreso por abastecimiento"
+  },
+  {
+    "idMovimiento": 16,
+    "idIngrediente": 5,
+    "tipoMovimiento": "ABASTECIMIENTO",
+    "cantidad": 0.55,
+    "fecha": "2026-10-26T08:16:00",
+    "descripcion": "Ingreso por abastecimiento"
+  },
+  {
+    "idMovimiento": 17,
+    "idIngrediente": 6,
+    "tipoMovimiento": "ABASTECIMIENTO",
+    "cantidad": 0.71,
+    "fecha": "2026-10-26T08:20:00",
+    "descripcion": "Ingreso por abastecimiento"
+  },
+  {
+    "idMovimiento": 18,
+    "idIngrediente": 7,
+    "tipoMovimiento": "ABASTECIMIENTO",
+    "cantidad": 0.59,
+    "fecha": "2026-10-26T08:24:00",
+    "descripcion": "Ingreso por abastecimiento"
+  },
+  {
+    "idMovimiento": 19,
+    "idIngrediente": 8,
+    "tipoMovimiento": "ABASTECIMIENTO",
+    "cantidad": 0.15,
+    "fecha": "2026-10-26T08:28:00",
+    "descripcion": "Ingreso por abastecimiento"
+  },
+  {
+    "idMovimiento": 20,
+    "idIngrediente": 9,
+    "tipoMovimiento": "ABASTECIMIENTO",
+    "cantidad": 2.65,
+    "fecha": "2026-10-26T08:32:00",
+    "descripcion": "Ingreso por abastecimiento"
+  },
+  {
+    "idMovimiento": 21,
+    "idIngrediente": 10,
+    "tipoMovimiento": "ABASTECIMIENTO",
+    "cantidad": 0.61,
+    "fecha": "2026-10-26T08:36:00",
+    "descripcion": "Ingreso por abastecimiento"
+  },
+  {
+    "idMovimiento": 22,
+    "idIngrediente": 11,
+    "tipoMovimiento": "ABASTECIMIENTO",
+    "cantidad": 0.85,
+    "fecha": "2026-10-26T08:40:00",
+    "descripcion": "Ingreso por abastecimiento"
+  },
+  {
+    "idMovimiento": 23,
     "idIngrediente": 1,
     "tipoMovimiento": "VENTA_PLATO",
-    "cantidad": 79,
-    "fecha": "2026-11-04T10:44:18.3378905",
+    "cantidad": 0.065,
+    "fecha": "2026-10-27T12:15:00",
     "descripcion": "Consumo de ingrediente por venta de platos ID: 1"
+  },
+  {
+    "idMovimiento": 24,
+    "idIngrediente": 2,
+    "tipoMovimiento": "VENTA_PLATO",
+    "cantidad": 2.34,
+    "fecha": "2026-10-27T12:15:00",
+    "descripcion": "Consumo de ingrediente por venta de platos ID: 1"
+  },
+  {
+    "idMovimiento": 25,
+    "idIngrediente": 3,
+    "tipoMovimiento": "VENTA_PLATO",
+    "cantidad": 1.71,
+    "fecha": "2026-10-27T12:15:00",
+    "descripcion": "Consumo de ingrediente por venta de platos ID: 1"
+  },
+  {
+    "idMovimiento": 26,
+    "idIngrediente": 4,
+    "tipoMovimiento": "VENTA_PLATO",
+    "cantidad": 0.32,
+    "fecha": "2026-10-27T12:15:00",
+    "descripcion": "Consumo de ingrediente por venta de platos ID: 1"
+  },
+  {
+    "idMovimiento": 27,
+    "idIngrediente": 5,
+    "tipoMovimiento": "VENTA_PLATO",
+    "cantidad": 0.31,
+    "fecha": "2026-10-27T12:15:00",
+    "descripcion": "Consumo de ingrediente por venta de platos ID: 1"
+  },
+  {
+    "idMovimiento": 28,
+    "idIngrediente": 6,
+    "tipoMovimiento": "VENTA_PLATO",
+    "cantidad": 0.44,
+    "fecha": "2026-10-27T12:15:00",
+    "descripcion": "Consumo de ingrediente por venta de platos ID: 1"
+  },
+  {
+    "idMovimiento": 29,
+    "idIngrediente": 7,
+    "tipoMovimiento": "VENTA_PLATO",
+    "cantidad": 0.18,
+    "fecha": "2026-10-27T12:15:00",
+    "descripcion": "Consumo de ingrediente por venta de platos ID: 1"
+  },
+  {
+    "idMovimiento": 30,
+    "idIngrediente": 8,
+    "tipoMovimiento": "VENTA_PLATO",
+    "cantidad": 0.08,
+    "fecha": "2026-10-27T12:15:00",
+    "descripcion": "Consumo de ingrediente por venta de platos ID: 1"
+  },
+  {
+    "idMovimiento": 31,
+    "idIngrediente": 11,
+    "tipoMovimiento": "VENTA_PLATO",
+    "cantidad": 0.25,
+    "fecha": "2026-10-27T12:15:00",
+    "descripcion": "Consumo de ingrediente por venta de platos ID: 1"
+  },
+  {
+    "idMovimiento": 32,
+    "idIngrediente": 1,
+    "tipoMovimiento": "VENTA_PLATO",
+    "cantidad": 0.055,
+    "fecha": "2026-10-29T13:40:00",
+    "descripcion": "Consumo de ingrediente por venta de platos ID: 2"
+  },
+  {
+    "idMovimiento": 33,
+    "idIngrediente": 4,
+    "tipoMovimiento": "VENTA_PLATO",
+    "cantidad": 0.32,
+    "fecha": "2026-10-29T13:40:00",
+    "descripcion": "Consumo de ingrediente por venta de platos ID: 2"
+  },
+  {
+    "idMovimiento": 34,
+    "idIngrediente": 5,
+    "tipoMovimiento": "VENTA_PLATO",
+    "cantidad": 0.08,
+    "fecha": "2026-10-29T13:40:00",
+    "descripcion": "Consumo de ingrediente por venta de platos ID: 2"
+  },
+  {
+    "idMovimiento": 35,
+    "idIngrediente": 7,
+    "tipoMovimiento": "VENTA_PLATO",
+    "cantidad": 0.11,
+    "fecha": "2026-10-29T13:40:00",
+    "descripcion": "Consumo de ingrediente por venta de platos ID: 2"
+  },
+  {
+    "idMovimiento": 36,
+    "idIngrediente": 9,
+    "tipoMovimiento": "VENTA_PLATO",
+    "cantidad": 2.55,
+    "fecha": "2026-10-29T13:40:00",
+    "descripcion": "Consumo de ingrediente por venta de platos ID: 2"
+  },
+  {
+    "idMovimiento": 37,
+    "idIngrediente": 10,
+    "tipoMovimiento": "VENTA_PLATO",
+    "cantidad": 0.69,
+    "fecha": "2026-10-29T13:40:00",
+    "descripcion": "Consumo de ingrediente por venta de platos ID: 2"
+  },
+  {
+    "idMovimiento": 38,
+    "idIngrediente": 1,
+    "tipoMovimiento": "VENTA_PLATO",
+    "cantidad": 0.055,
+    "fecha": "2026-11-01T12:20:00",
+    "descripcion": "Consumo de ingrediente por venta de platos ID: 3"
+  },
+  {
+    "idMovimiento": 39,
+    "idIngrediente": 2,
+    "tipoMovimiento": "VENTA_PLATO",
+    "cantidad": 1.8,
+    "fecha": "2026-11-01T12:20:00",
+    "descripcion": "Consumo de ingrediente por venta de platos ID: 3"
+  },
+  {
+    "idMovimiento": 40,
+    "idIngrediente": 3,
+    "tipoMovimiento": "VENTA_PLATO",
+    "cantidad": 1.68,
+    "fecha": "2026-11-01T12:20:00",
+    "descripcion": "Consumo de ingrediente por venta de platos ID: 3"
+  },
+  {
+    "idMovimiento": 41,
+    "idIngrediente": 4,
+    "tipoMovimiento": "VENTA_PLATO",
+    "cantidad": 0.2,
+    "fecha": "2026-11-01T12:20:00",
+    "descripcion": "Consumo de ingrediente por venta de platos ID: 3"
+  },
+  {
+    "idMovimiento": 42,
+    "idIngrediente": 5,
+    "tipoMovimiento": "VENTA_PLATO",
+    "cantidad": 0.28,
+    "fecha": "2026-11-01T12:20:00",
+    "descripcion": "Consumo de ingrediente por venta de platos ID: 3"
+  },
+  {
+    "idMovimiento": 43,
+    "idIngrediente": 6,
+    "tipoMovimiento": "VENTA_PLATO",
+    "cantidad": 0.15,
+    "fecha": "2026-11-01T12:20:00",
+    "descripcion": "Consumo de ingrediente por venta de platos ID: 3"
+  },
+  {
+    "idMovimiento": 44,
+    "idIngrediente": 7,
+    "tipoMovimiento": "VENTA_PLATO",
+    "cantidad": 0.17,
+    "fecha": "2026-11-01T12:20:00",
+    "descripcion": "Consumo de ingrediente por venta de platos ID: 3"
+  },
+  {
+    "idMovimiento": 45,
+    "idIngrediente": 8,
+    "tipoMovimiento": "VENTA_PLATO",
+    "cantidad": 0.05,
+    "fecha": "2026-11-01T12:20:00",
+    "descripcion": "Consumo de ingrediente por venta de platos ID: 3"
+  },
+  {
+    "idMovimiento": 46,
+    "idIngrediente": 11,
+    "tipoMovimiento": "VENTA_PLATO",
+    "cantidad": 0.3,
+    "fecha": "2026-11-01T12:20:00",
+    "descripcion": "Consumo de ingrediente por venta de platos ID: 3"
+  },
+  {
+    "idMovimiento": 47,
+    "idIngrediente": 1,
+    "tipoMovimiento": "VENTA_PLATO",
+    "cantidad": 0.065,
+    "fecha": "2026-11-03T13:00:00",
+    "descripcion": "Consumo de ingrediente por venta de platos ID: 4"
+  },
+  {
+    "idMovimiento": 48,
+    "idIngrediente": 2,
+    "tipoMovimiento": "VENTA_PLATO",
+    "cantidad": 0.72,
+    "fecha": "2026-11-03T13:00:00",
+    "descripcion": "Consumo de ingrediente por venta de platos ID: 4"
+  },
+  {
+    "idMovimiento": 49,
+    "idIngrediente": 3,
+    "tipoMovimiento": "VENTA_PLATO",
+    "cantidad": 0.6,
+    "fecha": "2026-11-03T13:00:00",
+    "descripcion": "Consumo de ingrediente por venta de platos ID: 4"
+  },
+  {
+    "idMovimiento": 50,
+    "idIngrediente": 4,
+    "tipoMovimiento": "VENTA_PLATO",
+    "cantidad": 0.24,
+    "fecha": "2026-11-03T13:00:00",
+    "descripcion": "Consumo de ingrediente por venta de platos ID: 4"
+  },
+  {
+    "idMovimiento": 51,
+    "idIngrediente": 5,
+    "tipoMovimiento": "VENTA_PLATO",
+    "cantidad": 0.18,
+    "fecha": "2026-11-03T13:00:00",
+    "descripcion": "Consumo de ingrediente por venta de platos ID: 4"
+  },
+  {
+    "idMovimiento": 52,
+    "idIngrediente": 6,
+    "tipoMovimiento": "VENTA_PLATO",
+    "cantidad": 0.16,
+    "fecha": "2026-11-03T13:00:00",
+    "descripcion": "Consumo de ingrediente por venta de platos ID: 4"
+  },
+  {
+    "idMovimiento": 53,
+    "idIngrediente": 7,
+    "tipoMovimiento": "VENTA_PLATO",
+    "cantidad": 0.17,
+    "fecha": "2026-11-03T13:00:00",
+    "descripcion": "Consumo de ingrediente por venta de platos ID: 4"
+  },
+  {
+    "idMovimiento": 54,
+    "idIngrediente": 9,
+    "tipoMovimiento": "VENTA_PLATO",
+    "cantidad": 2.1,
+    "fecha": "2026-11-03T13:00:00",
+    "descripcion": "Consumo de ingrediente por venta de platos ID: 4"
+  },
+  {
+    "idMovimiento": 55,
+    "idIngrediente": 10,
+    "tipoMovimiento": "VENTA_PLATO",
+    "cantidad": 0.57,
+    "fecha": "2026-11-03T13:00:00",
+    "descripcion": "Consumo de ingrediente por venta de platos ID: 4"
+  },
+  {
+    "idMovimiento": 56,
+    "idIngrediente": 11,
+    "tipoMovimiento": "VENTA_PLATO",
+    "cantidad": 0.2,
+    "fecha": "2026-11-03T13:00:00",
+    "descripcion": "Consumo de ingrediente por venta de platos ID: 4"
+  },
+  {
+    "idMovimiento": 57,
+    "idIngrediente": 1,
+    "tipoMovimiento": "VENTA_PLATO",
+    "cantidad": 0.02,
+    "fecha": "2026-11-04T10:44:00",
+    "descripcion": "Consumo de ingrediente por venta de platos ID: 5"
+  },
+  {
+    "idMovimiento": 58,
+    "idIngrediente": 2,
+    "tipoMovimiento": "VENTA_PLATO",
+    "cantidad": 0.66,
+    "fecha": "2026-11-04T10:44:00",
+    "descripcion": "Consumo de ingrediente por venta de platos ID: 5"
+  },
+  {
+    "idMovimiento": 59,
+    "idIngrediente": 3,
+    "tipoMovimiento": "VENTA_PLATO",
+    "cantidad": 0.6,
+    "fecha": "2026-11-04T10:44:00",
+    "descripcion": "Consumo de ingrediente por venta de platos ID: 5"
+  },
+  {
+    "idMovimiento": 60,
+    "idIngrediente": 4,
+    "tipoMovimiento": "VENTA_PLATO",
+    "cantidad": 0.08,
+    "fecha": "2026-11-04T10:44:00",
+    "descripcion": "Consumo de ingrediente por venta de platos ID: 5"
+  },
+  {
+    "idMovimiento": 61,
+    "idIngrediente": 5,
+    "tipoMovimiento": "VENTA_PLATO",
+    "cantidad": 0.1,
+    "fecha": "2026-11-04T10:44:00",
+    "descripcion": "Consumo de ingrediente por venta de platos ID: 5"
+  },
+  {
+    "idMovimiento": 62,
+    "idIngrediente": 6,
+    "tipoMovimiento": "VENTA_PLATO",
+    "cantidad": 0.06,
+    "fecha": "2026-11-04T10:44:00",
+    "descripcion": "Consumo de ingrediente por venta de platos ID: 5"
+  },
+  {
+    "idMovimiento": 63,
+    "idIngrediente": 7,
+    "tipoMovimiento": "VENTA_PLATO",
+    "cantidad": 0.06,
+    "fecha": "2026-11-04T10:44:00",
+    "descripcion": "Consumo de ingrediente por venta de platos ID: 5"
+  },
+  {
+    "idMovimiento": 64,
+    "idIngrediente": 8,
+    "tipoMovimiento": "VENTA_PLATO",
+    "cantidad": 0.02,
+    "fecha": "2026-11-04T10:44:00",
+    "descripcion": "Consumo de ingrediente por venta de platos ID: 5"
+  },
+  {
+    "idMovimiento": 65,
+    "idIngrediente": 11,
+    "tipoMovimiento": "VENTA_PLATO",
+    "cantidad": 0.1,
+    "fecha": "2026-11-04T10:44:00",
+    "descripcion": "Consumo de ingrediente por venta de platos ID: 5"
   }
 ]

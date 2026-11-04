@@ -2,15 +2,155 @@
   {
     "idAbastecimiento": 1,
     "idIngrediente": 1,
-    "cantidad": 50,
-    "costoUnitario": 0.75,
-    "fecha": "2026-11-03T23:27:16.0919648"
+    "cantidad": 0.3,
+    "costoUnitario": 2,
+    "fecha": "2026-10-24T08:00:00"
   },
   {
     "idAbastecimiento": 2,
-    "idIngrediente": 1,
+    "idIngrediente": 2,
     "cantidad": 10,
-    "costoUnitario": 0.75,
-    "fecha": "2026-11-04T10:30:07.7479712"
+    "costoUnitario": 1,
+    "fecha": "2026-10-24T08:04:00"
+  },
+  {
+    "idAbastecimiento": 3,
+    "idIngrediente": 3,
+    "cantidad": 5,
+    "costoUnitario": 5,
+    "fecha": "2026-10-24T08:08:00"
+  },
+  {
+    "idAbastecimiento": 4,
+    "idIngrediente": 4,
+    "cantidad": 0.9,
+    "costoUnitario": 3.5,
+    "fecha": "2026-10-24T08:12:00"
+  },
+  {
+    "idAbastecimiento": 5,
+    "idIngrediente": 5,
+    "cantidad": 0.8,
+    "costoUnitario": 1,
+    "fecha": "2026-10-24T08:16:00"
+  },
+  {
+    "idAbastecimiento": 6,
+    "idIngrediente": 6,
+    "cantidad": 0.9,
+    "costoUnitario": 1,
+    "fecha": "2026-10-24T08:20:00"
+  },
+  {
+    "idAbastecimiento": 7,
+    "idIngrediente": 7,
+    "cantidad": 1,
+    "costoUnitario": 3,
+    "fecha": "2026-10-24T08:24:00"
+  },
+  {
+    "idAbastecimiento": 8,
+    "idIngrediente": 8,
+    "cantidad": 0.2,
+    "costoUnitario": 4,
+    "fecha": "2026-10-24T08:28:00"
+  },
+  {
+    "idAbastecimiento": 9,
+    "idIngrediente": 9,
+    "cantidad": 5,
+    "costoUnitario": 1,
+    "fecha": "2026-10-24T08:32:00"
+  },
+  {
+    "idAbastecimiento": 10,
+    "idIngrediente": 10,
+    "cantidad": 1,
+    "costoUnitario": 6,
+    "fecha": "2026-10-24T08:36:00"
+  },
+  {
+    "idAbastecimiento": 11,
+    "idIngrediente": 11,
+    "cantidad": 1.5,
+    "costoUnitario": 1,
+    "fecha": "2026-10-24T08:40:00"
+  },
+  {
+    "idAbastecimiento": 12,
+    "idIngrediente": 1,
+    "cantidad": 0.36,
+    "costoUnitario": 2,
+    "fecha": "2026-10-26T08:00:00"
+  },
+  {
+    "idAbastecimiento": 13,
+    "idIngrediente": 2,
+    "cantidad": 5.52,
+    "costoUnitario": 1,
+    "fecha": "2026-10-26T08:04:00"
+  },
+  {
+    "idAbastecimiento": 14,
+    "idIngrediente": 3,
+    "cantidad": 2.59,
+    "costoUnitario": 5,
+    "fecha": "2026-10-26T08:08:00"
+  },
+  {
+    "idAbastecimiento": 15,
+    "idIngrediente": 4,
+    "cantidad": 0.56,
+    "costoUnitario": 3.5,
+    "fecha": "2026-10-26T08:12:00"
+  },
+  {
+    "idAbastecimiento": 16,
+    "idIngrediente": 5,
+    "cantidad": 0.55,
+    "costoUnitario": 1,
+    "fecha": "2026-10-26T08:16:00"
+  },
+  {
+    "idAbastecimiento": 17,
+    "idIngrediente": 6,
+    "cantidad": 0.71,
+    "costoUnitario": 1,
+    "fecha": "2026-10-26T08:20:00"
+  },
+  {
+    "idAbastecimiento": 18,
+    "idIngrediente": 7,
+    "cantidad": 0.59,
+    "costoUnitario": 3,
+    "fecha": "2026-10-26T08:24:00"
+  },
+  {
+    "idAbastecimiento": 19,
+    "idIngrediente": 8,
+    "cantidad": 0.15,
+    "costoUnitario": 4,
+    "fecha": "2026-10-26T08:28:00"
+  },
+  {
+    "idAbastecimiento": 20,
+    "idIngrediente": 9,
+    "cantidad": 2.65,
+    "costoUnitario": 1,
+    "fecha": "2026-10-26T08:32:00"
+  },
+  {
+    "idAbastecimiento": 21,
+    "idIngrediente": 10,
+    "cantidad": 0.61,
+    "costoUnitario": 6,
+    "fecha": "2026-10-26T08:36:00"
+  },
+  {
+    "idAbastecimiento": 22,
+    "idIngrediente": 11,
+    "cantidad": 0.85,
+    "costoUnitario": 1,
+    "fecha": "2026-10-26T08:40:00"
   }
 ]

@@ -1,16 +1,149 @@
 [
   {
     "idVenta": 1,
-    "fecha": "2026-11-04T11:24:14.5758502",
+    "fecha": "2026-10-27T12:20:00",
     "detalles": [
       {
         "idDetalleVenta": 1,
         "idBebida": 2,
-        "cantidad": 5,
+        "cantidad": 8,
         "precioUnitario": 0.58,
-        "subtotal": 2.90
+        "subtotal": 4.64
+      },
+      {
+        "idDetalleVenta": 2,
+        "idBebida": 3,
+        "cantidad": 5,
+        "precioUnitario": 0.92,
+        "subtotal": 4.6
+      },
+      {
+        "idDetalleVenta": 3,
+        "idBebida": 5,
+        "cantidad": 3,
+        "precioUnitario": 0.81,
+        "subtotal": 2.43
       }
     ],
-    "total": 2.90
+    "total": 11.67
+  },
+  {
+    "idVenta": 2,
+    "fecha": "2026-10-29T13:45:00",
+    "detalles": [
+      {
+        "idDetalleVenta": 4,
+        "idBebida": 2,
+        "cantidad": 7,
+        "precioUnitario": 0.58,
+        "subtotal": 4.06
+      },
+      {
+        "idDetalleVenta": 5,
+        "idBebida": 4,
+        "cantidad": 4,
+        "precioUnitario": 0.69,
+        "subtotal": 2.76
+      }
+    ],
+    "total": 6.82
+  },
+  {
+    "idVenta": 3,
+    "fecha": "2026-11-01T12:25:00",
+    "detalles": [
+      {
+        "idDetalleVenta": 6,
+        "idBebida": 3,
+        "cantidad": 6,
+        "precioUnitario": 0.92,
+        "subtotal": 5.52
+      },
+      {
+        "idDetalleVenta": 7,
+        "idBebida": 5,
+        "cantidad": 5,
+        "precioUnitario": 0.81,
+        "subtotal": 4.05
+      },
+      {
+        "idDetalleVenta": 8,
+        "idBebida": 4,
+        "cantidad": 3,
+        "precioUnitario": 0.69,
+        "subtotal": 2.07
+      }
+    ],
+    "total": 11.64
+  },
+  {
+    "idVenta": 4,
+    "fecha": "2026-11-03T13:05:00",
+    "detalles": [
+      {
+        "idDetalleVenta": 9,
+        "idBebida": 2,
+        "cantidad": 5,
+        "precioUnitario": 0.58,
+        "subtotal": 2.9
+      },
+      {
+        "idDetalleVenta": 10,
+        "idBebida": 3,
+        "cantidad": 4,
+        "precioUnitario": 0.92,
+        "subtotal": 3.68
+      },
+      {
+        "idDetalleVenta": 11,
+        "idBebida": 5,
+        "cantidad": 4,
+        "precioUnitario": 0.81,
+        "subtotal": 3.24
+      },
+      {
+        "idDetalleVenta": 12,
+        "idBebida": 4,
+        "cantidad": 5,
+        "precioUnitario": 0.69,
+        "subtotal": 3.45
+      }
+    ],
+    "total": 13.27
+  },
+  {
+    "idVenta": 5,
+    "fecha": "2026-11-04T10:50:00",
+    "detalles": [
+      {
+        "idDetalleVenta": 13,
+        "idBebida": 2,
+        "cantidad": 3,
+        "precioUnitario": 0.58,
+        "subtotal": 1.74
+      },
+      {
+        "idDetalleVenta": 14,
+        "idBebida": 3,
+        "cantidad": 3,
+        "precioUnitario": 0.92,
+        "subtotal": 2.76
+      },
+      {
+        "idDetalleVenta": 15,
+        "idBebida": 5,
+        "cantidad": 2,
+        "precioUnitario": 0.81,
+        "subtotal": 1.62
+      },
+      {
+        "idDetalleVenta": 16,
+        "idBebida": 4,
+        "cantidad": 4,
+        "precioUnitario": 0.69,
+        "subtotal": 2.76
+      }
+    ],
+    "total": 8.88
   }
 ]

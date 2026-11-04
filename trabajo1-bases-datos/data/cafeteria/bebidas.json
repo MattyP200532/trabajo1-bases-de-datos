@@ -3,14 +3,35 @@
     "idBebida": 1,
     "nombre": "Coca Cola",
     "stockActual": 20,
-    "precioFijo": 1.00,
+    "precioFijo": 1,
     "activa": false
   },
   {
     "idBebida": 2,
     "nombre": "Agua",
-    "stockActual": 25,
-    "precioFijo": 0.50,
+    "stockActual": 2,
+    "precioFijo": 0.5,
+    "activa": true
+  },
+  {
+    "idBebida": 3,
+    "nombre": "Jugo natural de naranja",
+    "stockActual": 22,
+    "precioFijo": 0.8,
+    "activa": true
+  },
+  {
+    "idBebida": 4,
+    "nombre": "Café americano",
+    "stockActual": 30,
+    "precioFijo": 0.6,
+    "activa": true
+  },
+  {
+    "idBebida": 5,
+    "nombre": "Limonada natural",
+    "stockActual": 16,
+    "precioFijo": 0.7,
     "activa": true
   }
 ]
