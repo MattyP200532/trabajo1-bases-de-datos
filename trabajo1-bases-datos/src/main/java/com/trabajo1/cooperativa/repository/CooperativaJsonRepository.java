@@ -106,15 +106,20 @@ public class CooperativaJsonRepository {
                 gson.toJson(estado, escritor);
             }
 
-            try {
-                Files.move(temporal, archivo,
+            
+                try {
+                Files.move(
+                        temporal,
+                        archivo,
                         StandardCopyOption.REPLACE_EXISTING,
-                        StandardCopyOption.ATOMIC_MOVE);
+                        StandardCopyOption.ATOMIC_MOVE
+                );
 
-            } catch (AtomicMoveNotSupportedException e) {
-                Files.move(temporal, archivo,
-                        StandardCopyOption.REPLACE_EXISTING);
-            }
+                } catch (AtomicMoveNotSupportedException e) {
+                throw new IOException(
+                        "No se puede garantizar el guardado atomico "
+                        + "en este sistema de archivos", e);
+                }
 
         } catch (IOException e) {
             throw new UncheckedIOException(
