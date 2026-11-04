@@ -17,7 +17,7 @@ public class BibliotecaRepository {
     private final JsonRepository<Multa> multas;
 
     public BibliotecaRepository() {
-        this("../data/biblioteca");
+        this("data/biblioteca");
     }
 
     public BibliotecaRepository(String directorioBase) {

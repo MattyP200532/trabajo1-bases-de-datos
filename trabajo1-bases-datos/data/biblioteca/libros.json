@@ -1,0 +1,17 @@
+[
+  {
+    "id": "L001",
+    "titulo": "Cien años de soledad",
+    "autor": "Gabriel García Márquez"
+  },
+  {
+    "id": "L002",
+    "titulo": "Don Quijote de la Mancha",
+    "autor": "Miguel de Cervantes"
+  },
+  {
+    "id": "L003",
+    "titulo": "El principito",
+    "autor": "Antoine de Saint-Exupéry"
+  }
+]
