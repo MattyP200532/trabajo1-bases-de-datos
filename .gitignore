@@ -31,3 +31,4 @@ target/
 
 # Archivos temporales
 *.tmp
+**/target/
