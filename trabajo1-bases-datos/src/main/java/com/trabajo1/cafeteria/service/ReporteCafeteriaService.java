@@ -15,12 +15,14 @@ public class ReporteCafeteriaService {
     private final PlatoRepository platoRepository;
     private final RecetaRepository recetaRepository;
     private final VentaPlatosRepository ventaRepository;
+    private final MovimientoInventarioRepository movimientoRepository;
 
     public ReporteCafeteriaService() {
         this.ingredienteRepository = new IngredienteRepository();
         this.platoRepository = new PlatoRepository();
         this.recetaRepository = new RecetaRepository();
         this.ventaRepository = new VentaPlatosRepository();
+        this.movimientoRepository = new MovimientoInventarioRepository();
     }
 
     // REPORTE 1:
@@ -230,23 +232,35 @@ public class ReporteCafeteriaService {
     // REPORTE 5:
     // Auditoría del stock de ingredientes.
 
-    public Map<String, BigDecimal> reporteAuditoriaStock() {
+    public Map<Ingrediente, List<MovimientoInventario>>
+reporteAuditoriaStock() {
 
-        Map<String, BigDecimal> reporte =
-                new LinkedHashMap<>();
+    Map<Ingrediente, List<MovimientoInventario>> reporte =
+            new LinkedHashMap<>();
 
-        for (Ingrediente ingrediente :
-                ingredienteRepository.obtenerTodos()) {
+    List<MovimientoInventario> movimientos =
+            movimientoRepository.obtenerTodos();
 
-            if (ingrediente.isActivo()) {
-                reporte.put(
-                        ingrediente.getNombre(),
-                        ingrediente.getStockActual());
-            }
+    for (Ingrediente ingrediente :
+            ingredienteRepository.obtenerTodos()) {
+
+        if (!ingrediente.isActivo()) {
+            continue;
         }
 
-        return reporte;
+        List<MovimientoInventario> historial =
+                movimientos.stream()
+                        .filter(m -> m.getIdIngrediente()
+                                == ingrediente.getIdIngrediente())
+                        .sorted(Comparator.comparing(
+                                MovimientoInventario::getFecha))
+                        .toList();
+
+        reporte.put(ingrediente, historial);
     }
+
+    return reporte;
+}
 
     private void validarPeriodo(
             LocalDateTime inicio,

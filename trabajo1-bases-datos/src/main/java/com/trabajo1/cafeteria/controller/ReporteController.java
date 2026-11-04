@@ -3,6 +3,8 @@ package com.trabajo1.cafeteria.controller;
 
 import com.trabajo1.cafeteria.service.ReporteCafeteriaService;
 import com.trabajo1.cafeteria.model.Ingrediente;
+import com.trabajo1.cafeteria.model.MovimientoInventario;
+import com.trabajo1.cafeteria.model.TipoMovimiento;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -174,21 +176,60 @@ public class ReporteController {
 
     private void mostrarAuditoriaStock() {
 
-        System.out.println("\n--- AUDITORIA DE STOCK ---");
+    System.out.println("\n--- AUDITORIA DE STOCK ---");
 
-        Map<String, BigDecimal> reporte =
-                reporteService.reporteAuditoriaStock();
+    Map<Ingrediente, List<MovimientoInventario>> reporte =
+            reporteService.reporteAuditoriaStock();
 
-        if (reporte.isEmpty()) {
-            System.out.println("No hay ingredientes registrados.");
+    if (reporte.isEmpty()) {
+        System.out.println("No hay ingredientes registrados.");
+        return;
+    }
+
+    reporte.forEach((ingrediente, movimientos) -> {
+
+        System.out.println("\nIngrediente: "
+                + ingrediente.getNombre());
+
+        System.out.println("Stock actual: "
+                + ingrediente.getStockActual());
+
+        System.out.println("\nHISTORIAL DE MOVIMIENTOS:");
+
+        if (movimientos.isEmpty()) {
+            System.out.println(
+                    "No hay movimientos registrados para este ingrediente.");
             return;
         }
 
-        reporte.forEach((nombre, stock) ->
-                System.out.println(
-                        "Ingrediente: " + nombre
-                        + " | Stock actual: " + stock
-                )
-        );
-    }
+        for (MovimientoInventario movimiento : movimientos) {
+
+            String signo = "";
+
+            if (movimiento.getTipoMovimiento()
+                    == TipoMovimiento.ABASTECIMIENTO) {
+                signo = "+";
+            } else if (movimiento.getTipoMovimiento()
+                    == TipoMovimiento.VENTA_PLATO) {
+                signo = "-";
+            }
+
+            System.out.println("--------------------------------");
+
+            System.out.println("Fecha: "
+                    + movimiento.getFecha());
+
+            System.out.println("Tipo: "
+                    + movimiento.getTipoMovimiento());
+
+            System.out.println("Cantidad: "
+                    + signo + movimiento.getCantidad());
+
+            System.out.println("Descripcion: "
+                    + movimiento.getDescripcion());
+        }
+
+        System.out.println("--------------------------------");
+    });
+}
 }
