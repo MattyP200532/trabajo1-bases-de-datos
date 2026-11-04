@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="ES"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-27.0.1.0.3\bin"/>
-    <property name="sun.java.command" value="C:\Users\ASUS\AppData\Local\Temp\surefire15309317395657484293\surefirebooter-20261103210431100_3.jar C:\Users\ASUS\AppData\Local\Temp\surefire15309317395657484293 2026-11-03T21-04-30_987-jvmRun1 surefire-20261103210431100_1tmp surefire_0-20261103210431100_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\ASUS\AppData\Local\Temp\surefire494119994758741363\surefirebooter-20261104104738781_3.jar C:\Users\ASUS\AppData\Local\Temp\surefire494119994758741363 2026-11-04T10-47-38_668-jvmRun1 surefire-20261104104738781_1tmp surefire_0-20261104104738781_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Important\Universidad\4to Semestre\Base de Datos\trabajo1-bases-de-datos\trabajo1-bases-datos\target\test-classes;C:\Important\Universidad\4to Semestre\Base de Datos\trabajo1-bases-de-datos\trabajo1-bases-datos\target\classes;C:\Users\ASUS\.m2\repository\com\google\code\gson\gson\2.13.2\gson-2.13.2.jar;C:\Users\ASUS\.m2\repository\com\google\errorprone\error_prone_annotations\2.41.0\error_prone_annotations-2.41.0.jar;C:\Users\ASUS\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\ASUS\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\ASUS\AppData\Local\Temp\surefire15309317395657484293\surefirebooter-20261103210431100_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\ASUS\AppData\Local\Temp\surefire494119994758741363\surefirebooter-20261104104738781_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="27.0.1.0.3+1-2"/>
@@ -60,6 +60,6 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="71.0"/>
   </properties>
-  <testcase name="debeGuardarYCargarUsuarios" classname="com.trabajo1.biblioteca.repository.JsonRepositoryTest" time="0.004"/>
-  <testcase name="debeGuardarYCargarFechasDePrestamo" classname="com.trabajo1.biblioteca.repository.JsonRepositoryTest" time="0.003"/>
+  <testcase name="debeGuardarYCargarUsuarios" classname="com.trabajo1.biblioteca.repository.JsonRepositoryTest" time="0.002"/>
+  <testcase name="debeGuardarYCargarFechasDePrestamo" classname="com.trabajo1.biblioteca.repository.JsonRepositoryTest" time="0.004"/>
 </testsuite>

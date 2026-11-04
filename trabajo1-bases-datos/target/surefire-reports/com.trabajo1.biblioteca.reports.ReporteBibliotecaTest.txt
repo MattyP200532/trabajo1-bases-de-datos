@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.trabajo1.biblioteca.reports.ReporteBibliotecaTest
+-------------------------------------------------------------------------------
+Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.046 s -- in com.trabajo1.biblioteca.reports.ReporteBibliotecaTest
