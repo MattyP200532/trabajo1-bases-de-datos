@@ -10,7 +10,7 @@ import com.trabajo1.cafeteria.repository.VentaBebidasRepository;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.time.LocalDateTime;
-import java.util.List;
+import java.util.*;
 
 public class VentaBebidasService {
 
@@ -39,12 +39,12 @@ public class VentaBebidasService {
 
         if (idVenta <= 0) {
             throw new IllegalArgumentException(
-                    "El identificador de venta debe ser positivo");
+                    "El identificador debe ser positivo");
         }
 
         if (detalles == null || detalles.isEmpty()) {
             throw new IllegalArgumentException(
-                    "La venta debe contener al menos una bebida");
+                    "Debe incluir al menos una bebida");
         }
 
         if (ventaRepository.buscarPorId(idVenta).isPresent()) {
@@ -52,82 +52,116 @@ public class VentaBebidasService {
                     "Ya existe una venta con ese identificador");
         }
 
-        // Validar todas las bebidas antes de modificar el stock.
+        // Acumular cantidades por bebida.
+        Map<Integer, Integer> cantidades = new LinkedHashMap<>();
+
         for (DetalleVentaBebidas detalle : detalles) {
 
-            if (detalle.getCantidad() <= 0) {
+            if (detalle == null || detalle.getCantidad() <= 0) {
                 throw new IllegalArgumentException(
                         "La cantidad debe ser mayor que cero");
             }
 
+            cantidades.merge(
+                    detalle.getIdBebida(),
+                    detalle.getCantidad(),
+                    Integer::sum);
+        }
+
+        // Obtener y validar todas las bebidas.
+        Map<Integer, Bebida> bebidas =
+                new LinkedHashMap<>();
+
+        for (Map.Entry<Integer, Integer> entrada :
+                cantidades.entrySet()) {
+
             Bebida bebida = bebidaRepository
-                    .buscarPorId(detalle.getIdBebida())
-                    .orElseThrow(() -> new IllegalArgumentException(
-                            "Bebida no encontrada: "
-                                    + detalle.getIdBebida()));
+                    .buscarPorId(entrada.getKey())
+                    .orElseThrow(() ->
+                            new IllegalArgumentException(
+                                    "Bebida no encontrada: "
+                                            + entrada.getKey()));
 
             if (!bebida.isActiva()) {
                 throw new IllegalArgumentException(
-                        "La bebida no está activa: "
-                                + bebida.getNombre());
+                        "Bebida inactiva: " + bebida.getNombre());
             }
 
-            if (bebida.getStockActual() < detalle.getCantidad()) {
+            if (bebida.getStockActual() < entrada.getValue()) {
                 throw new IllegalArgumentException(
                         "Stock insuficiente para: "
                                 + bebida.getNombre());
             }
+
+            bebidas.put(bebida.getIdBebida(), bebida);
         }
 
+        // Construir la venta.
         VentaBebidas venta = new VentaBebidas(
                 idVenta,
-                LocalDateTime.now()
-        );
+                LocalDateTime.now());
 
-        BigDecimal total = BigDecimal.ZERO;
-
-        // Calcular precios con IVA.
         for (DetalleVentaBebidas detalle : detalles) {
 
-            Bebida bebida = bebidaRepository
-                    .buscarPorId(detalle.getIdBebida())
-                    .orElseThrow();
+            Bebida bebida = bebidas.get(detalle.getIdBebida());
 
-            BigDecimal precioConIVA = bebida.getPrecioFijo()
-                    .multiply(BigDecimal.ONE.add(IVA))
-                    .setScale(2, RoundingMode.HALF_UP);
+            BigDecimal precioConIVA =
+                    calcularPrecioConIVA(bebida.getPrecioFijo());
 
             DetalleVentaBebidas nuevoDetalle =
                     new DetalleVentaBebidas(
                             detalle.getIdDetalleVenta(),
                             bebida.getIdBebida(),
                             detalle.getCantidad(),
-                            precioConIVA
-                    );
+                            precioConIVA);
 
             venta.agregarDetalle(nuevoDetalle);
-
-            total = total.add(nuevoDetalle.getSubtotal());
         }
 
-        // Actualizar stock.
-        for (DetalleVentaBebidas detalle : detalles) {
+        // Preparar los nuevos stocks.
+        Map<Integer, Integer> stocksAnteriores =
+                new LinkedHashMap<>();
 
-            Bebida bebida = bebidaRepository
-                    .buscarPorId(detalle.getIdBebida())
-                    .orElseThrow();
+        for (Map.Entry<Integer, Integer> entrada :
+                cantidades.entrySet()) {
+
+            Bebida bebida = bebidas.get(entrada.getKey());
+
+            stocksAnteriores.put(
+                    bebida.getIdBebida(),
+                    bebida.getStockActual());
 
             bebida.setStockActual(
-                    bebida.getStockActual() - detalle.getCantidad()
-            );
-
-            bebidaRepository.actualizar(bebida);
+                    bebida.getStockActual() - entrada.getValue());
         }
 
-        venta.calcularTotal();
+        // Guardar la venta y actualizar los stocks.
+        // Si ocurre un error, intentar restaurar los stocks.
+        try {
+            for (Bebida bebida : bebidas.values()) {
+                bebidaRepository.actualizar(bebida);
+            }
 
-        // Registrar venta.
-        ventaRepository.guardar(venta);
+            ventaRepository.guardar(venta);
+
+        } catch (RuntimeException e) {
+
+            for (Map.Entry<Integer, Integer> entrada :
+                    stocksAnteriores.entrySet()) {
+
+                Bebida bebida = bebidas.get(entrada.getKey());
+
+                bebida.setStockActual(entrada.getValue());
+
+                try {
+                    bebidaRepository.actualizar(bebida);
+                } catch (RuntimeException errorRestauracion) {
+                    e.addSuppressed(errorRestauracion);
+                }
+            }
+
+            throw e;
+        }
 
         return venta;
     }
@@ -148,7 +182,9 @@ public class VentaBebidasService {
                 .setScale(2, RoundingMode.HALF_UP);
     }
 
-    public BigDecimal calcularPrecioConIVA(BigDecimal precioFijo) {
+    public BigDecimal calcularPrecioConIVA(
+            BigDecimal precioFijo) {
+
         return precioFijo.add(calcularIVA(precioFijo))
                 .setScale(2, RoundingMode.HALF_UP);
     }
