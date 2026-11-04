@@ -1,0 +1,10 @@
+[
+  {
+    "idMovimiento": 1,
+    "idIngrediente": 1,
+    "tipoMovimiento": "ABASTECIMIENTO",
+    "cantidad": 50,
+    "fecha": "2026-11-03T23:27:16.0919648",
+    "descripcion": "Ingreso por abastecimiento"
+  }
+]

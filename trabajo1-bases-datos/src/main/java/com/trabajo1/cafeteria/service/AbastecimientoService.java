@@ -3,13 +3,13 @@ package com.trabajo1.cafeteria.service;
 
 import com.trabajo1.cafeteria.model.Abastecimiento;
 import com.trabajo1.cafeteria.model.Ingrediente;
-import com.trabajo1.cafeteria.repository.AbastecimientoRepository;
-import com.trabajo1.cafeteria.repository.IngredienteRepository;
 import com.trabajo1.cafeteria.model.MovimientoInventario;
 import com.trabajo1.cafeteria.model.TipoMovimiento;
+import com.trabajo1.cafeteria.repository.AbastecimientoRepository;
+import com.trabajo1.cafeteria.repository.IngredienteRepository;
 import com.trabajo1.cafeteria.repository.MovimientoInventarioRepository;
+
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
 import java.util.List;
 
 public class AbastecimientoService {
@@ -24,8 +24,7 @@ public class AbastecimientoService {
         this.movimientoRepository = new MovimientoInventarioRepository();
     }
 
-    public void registrarAbastecimiento(
-            Abastecimiento abastecimiento) {
+    public void registrarAbastecimiento(Abastecimiento abastecimiento) {
 
         validarAbastecimiento(abastecimiento);
 
@@ -38,16 +37,10 @@ public class AbastecimientoService {
                         )
                 );
 
+        // Verificar si el ingrediente está activo
         if (!ingrediente.isActivo()) {
             throw new IllegalArgumentException(
                     "No se puede abastecer un ingrediente inactivo"
-            );
-        }
-
-        // Registrar la fecha si no está especificada
-        if (abastecimiento.getFecha() == null) {
-            throw new IllegalArgumentException(
-                    "La fecha del abastecimiento es obligatoria"
             );
         }
 
@@ -55,30 +48,34 @@ public class AbastecimientoService {
         BigDecimal nuevoStock = ingrediente.getStockActual()
                 .add(abastecimiento.getCantidad());
 
-        // Actualizar el costo unitario del ingrediente
+        // Actualizar los datos del ingrediente
         ingrediente.setCostoUnitario(
                 abastecimiento.getCostoUnitario()
         );
 
         ingrediente.setStockActual(nuevoStock);
 
-       // Guardar el abastecimiento
-abastecimientoRepository.guardar(abastecimiento);
+        // Generar identificador independiente del movimiento
+        int idMovimiento = movimientoRepository.obtenerSiguienteId();
 
-// Actualizar el ingrediente
-ingredienteRepository.actualizar(ingrediente);
+        // Crear movimiento de inventario
+        MovimientoInventario movimiento = new MovimientoInventario(
+                idMovimiento,
+                abastecimiento.getIdIngrediente(),
+                TipoMovimiento.ABASTECIMIENTO,
+                abastecimiento.getCantidad(),
+                abastecimiento.getFecha(),
+                "Ingreso por abastecimiento"
+        );
 
-// Registrar movimiento de inventario
-MovimientoInventario movimiento = new MovimientoInventario(
-        abastecimiento.getIdAbastecimiento(),
-        abastecimiento.getIdIngrediente(),
-        TipoMovimiento.ABASTECIMIENTO,
-        abastecimiento.getCantidad(),
-        abastecimiento.getFecha(),
-        "Ingreso por abastecimiento"
-);
+        // Guardar abastecimiento
+        abastecimientoRepository.guardar(abastecimiento);
 
-movimientoRepository.guardar(movimiento);
+        // Actualizar ingrediente
+        ingredienteRepository.actualizar(ingrediente);
+
+        // Guardar movimiento de inventario
+        movimientoRepository.guardar(movimiento);
     }
 
     public List<Abastecimiento> obtenerTodos() {
@@ -94,9 +91,7 @@ movimientoRepository.guardar(movimiento);
                 );
     }
 
-    public List<Abastecimiento> obtenerPorIngrediente(
-            int idIngrediente) {
-
+    public List<Abastecimiento> obtenerPorIngrediente(int idIngrediente) {
         return abastecimientoRepository.obtenerTodos()
                 .stream()
                 .filter(a ->
@@ -105,8 +100,7 @@ movimientoRepository.guardar(movimiento);
                 .toList();
     }
 
-    private void validarAbastecimiento(
-            Abastecimiento abastecimiento) {
+    private void validarAbastecimiento(Abastecimiento abastecimiento) {
 
         if (abastecimiento == null) {
             throw new IllegalArgumentException(

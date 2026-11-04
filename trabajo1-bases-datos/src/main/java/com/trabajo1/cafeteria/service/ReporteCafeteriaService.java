@@ -38,12 +38,14 @@ public class ReporteCafeteriaService {
                 continue;
             }
 
-            Receta receta = recetaRepository
-                    .buscarPorId(plato.getIdReceta())
-                    .orElseThrow(() ->
-                            new IllegalArgumentException(
-                                    "Receta no encontrada: "
-                                            + plato.getNombre()));
+           Receta receta = recetaRepository.obtenerTodos()
+        .stream()
+        .filter(r -> r.getIdPlato() == plato.getIdPlato())
+        .findFirst()
+        .orElseThrow(() ->
+                new IllegalArgumentException(
+                        "Receta no encontrada para el plato: "
+                                + plato.getNombre()));
 
             BigDecimal costo = BigDecimal.ZERO;
 
@@ -111,8 +113,10 @@ public class ReporteCafeteriaService {
             }
 
             Optional<Receta> recetaOpcional =
-                    recetaRepository.buscarPorId(
-                            plato.getIdReceta());
+        recetaRepository.obtenerTodos()
+                .stream()
+                .filter(r -> r.getIdPlato() == plato.getIdPlato())
+                .findFirst();
 
             if (recetaOpcional.isEmpty()) {
                 continue;

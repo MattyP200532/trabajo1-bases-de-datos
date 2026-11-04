@@ -1,0 +1,11 @@
+[
+  {
+    "idIngrediente": 1,
+    "nombre": "sal",
+    "unidadMedida": "KILOGRAMO",
+    "stockActual": 150,
+    "stockMinimo": 20,
+    "costoUnitario": 0.75,
+    "activo": true
+  }
+]

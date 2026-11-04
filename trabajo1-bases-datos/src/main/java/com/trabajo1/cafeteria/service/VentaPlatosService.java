@@ -14,13 +14,15 @@ public class VentaPlatosService {
     private final PlatoRepository platoRepository;
     private final RecetaRepository recetaRepository;
     private final IngredienteRepository ingredienteRepository;
+    private final MovimientoInventarioRepository movimientoRepository;
 
     public VentaPlatosService() {
-        this.ventaRepository = new VentaPlatosRepository();
-        this.platoRepository = new PlatoRepository();
-        this.recetaRepository = new RecetaRepository();
-        this.ingredienteRepository = new IngredienteRepository();
-    }
+    this.ventaRepository = new VentaPlatosRepository();
+    this.platoRepository = new PlatoRepository();
+    this.recetaRepository = new RecetaRepository();
+    this.ingredienteRepository = new IngredienteRepository();
+    this.movimientoRepository = new MovimientoInventarioRepository();
+}
 
     public VentaPlatos registrarVenta(
             int idVenta,
@@ -72,12 +74,14 @@ public class VentaPlatosService {
                     "El plato no está activo: " + plato.getNombre());
             }
 
-            Receta receta = recetaRepository.buscarPorId(
-                    plato.getIdReceta())
-                    .orElseThrow(() ->
-                        new IllegalArgumentException(
-                            "Receta no encontrada para el plato: "
-                            + plato.getNombre()));
+            Receta receta = recetaRepository.obtenerTodos()
+        .stream()
+        .filter(r -> r.getIdPlato() == plato.getIdPlato())
+        .findFirst()
+        .orElseThrow(() ->
+            new IllegalArgumentException(
+                "Receta no encontrada para el plato: "
+                + plato.getNombre()));
 
             if (receta.getDetalles() == null ||
                     receta.getDetalles().isEmpty()) {
@@ -151,22 +155,37 @@ public class VentaPlatosService {
             }
         }
 
-        // 3. Descontar los ingredientes.
-        for (Map.Entry<Integer, BigDecimal> consumo :
-                consumoTotal.entrySet()) {
+        // 3. Descontar los ingredientes y registrar movimientos.
+for (Map.Entry<Integer, BigDecimal> consumo :
+        consumoTotal.entrySet()) {
 
-            Ingrediente ingrediente = ingredientes.stream()
-                    .filter(i -> i.getIdIngrediente()
-                            == consumo.getKey())
-                    .findFirst()
-                    .orElseThrow();
+    Ingrediente ingrediente = ingredientes.stream()
+            .filter(i -> i.getIdIngrediente()
+                    == consumo.getKey())
+            .findFirst()
+            .orElseThrow();
 
-            ingrediente.setStockActual(
-                    ingrediente.getStockActual()
-                            .subtract(consumo.getValue()));
+    BigDecimal cantidadDescontada = consumo.getValue();
 
-            ingredienteRepository.actualizar(ingrediente);
-        }
+    ingrediente.setStockActual(
+            ingrediente.getStockActual()
+                    .subtract(cantidadDescontada));
+
+    ingredienteRepository.actualizar(ingrediente);
+
+    MovimientoInventario movimiento =
+            new MovimientoInventario(
+                    movimientoRepository.obtenerSiguienteId(),
+                    ingrediente.getIdIngrediente(),
+                    TipoMovimiento.VENTA_PLATO,
+                    cantidadDescontada,
+                    LocalDateTime.now(),
+                    "Consumo de ingrediente por venta de platos ID: "
+                            + idVenta
+            );
+
+    movimientoRepository.guardar(movimiento);
+}
 
         // 4. Guardar la venta.
         ventaRepository.guardar(venta);

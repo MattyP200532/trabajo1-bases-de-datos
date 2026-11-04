@@ -1,0 +1,13 @@
+[
+  {
+    "idReceta": 1,
+    "idPlato": 1,
+    "detalles": [
+      {
+        "idDetalleReceta": 1,
+        "idIngrediente": 1,
+        "cantidadNecesaria": 79
+      }
+    ]
+  }
+]

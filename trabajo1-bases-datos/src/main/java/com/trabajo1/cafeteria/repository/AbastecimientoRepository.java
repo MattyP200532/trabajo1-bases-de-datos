@@ -33,6 +33,19 @@ public class AbastecimientoRepository {
                 .filter(a -> a.getIdAbastecimiento() == id)
                 .findFirst();
     }
+    public int obtenerSiguienteId() {
+
+    List<Abastecimiento> lista = obtenerTodos();
+
+    if (lista.isEmpty()) {
+        return 1;
+    }
+
+    return lista.stream()
+            .mapToInt(Abastecimiento::getIdAbastecimiento)
+            .max()
+            .orElse(0) + 1;
+}
 
     public void guardar(Abastecimiento abastecimiento) {
         List<Abastecimiento> lista = obtenerTodos();

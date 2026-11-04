@@ -1,88 +1,89 @@
 
 package com.trabajo1.cafeteria.repository;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 import com.trabajo1.cafeteria.model.Ingrediente;
 
-import java.io.IOException;
 import java.lang.reflect.Type;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 public class IngredienteRepository {
 
-    private final Path archivo;
-    private final Gson gson;
+    private final JsonDataManager dataManager;
+    private static final String ARCHIVO = "ingredientes";
 
     public IngredienteRepository() {
-        this("data/cafeteria/ingredientes.json");
-    }
-
-    public IngredienteRepository(String rutaArchivo) {
-        this.archivo = Path.of(rutaArchivo);
-        this.gson = new GsonBuilder()
-                .setPrettyPrinting()
-                .create();
+        this.dataManager = new JsonDataManager();
     }
 
     public List<Ingrediente> obtenerTodos() {
-        if (!Files.exists(archivo)) {
-            return new ArrayList<>();
-        }
 
-        try {
-            String json = Files.readString(archivo);
+        Type tipo = new TypeToken<List<Ingrediente>>() {
+        }.getType();
 
-            Type tipoLista = new TypeToken<List<Ingrediente>>() {
-            }.getType();
+        List<Ingrediente> ingredientes = dataManager.cargar(
+                ARCHIVO,
+                tipo,
+                new ArrayList<>()
+        );
 
-            List<Ingrediente> ingredientes =
-                    gson.fromJson(json, tipoLista);
-
-            return ingredientes == null
-                    ? new ArrayList<>()
-                    : ingredientes;
-
-        } catch (IOException e) {
-            throw new RuntimeException(
-                    "Error al leer los ingredientes", e);
-        }
+        return ingredientes == null
+                ? new ArrayList<>()
+                : ingredientes;
     }
 
     public Optional<Ingrediente> buscarPorId(int id) {
+
         return obtenerTodos().stream()
                 .filter(i -> i.getIdIngrediente() == id)
                 .findFirst();
     }
 
+    public int obtenerSiguienteId() {
+
+    List<Ingrediente> ingredientes = obtenerTodos();
+
+    if (ingredientes.isEmpty()) {
+        return 1;
+    }
+
+    return ingredientes.stream()
+            .mapToInt(Ingrediente::getIdIngrediente)
+            .max()
+            .orElse(0) + 1;
+    }
+
     public void guardar(Ingrediente ingrediente) {
+
         List<Ingrediente> ingredientes = obtenerTodos();
 
         boolean existe = ingredientes.stream()
                 .anyMatch(i ->
                         i.getIdIngrediente()
-                                == ingrediente.getIdIngrediente());
+                                == ingrediente.getIdIngrediente()
+                );
 
         if (existe) {
             throw new IllegalArgumentException(
-                    "Ya existe un ingrediente con ese identificador");
+                    "Ya existe un ingrediente con ese identificador"
+            );
         }
 
         ingredientes.add(ingrediente);
-        guardarTodos(ingredientes);
+
+        dataManager.guardar(ARCHIVO, ingredientes);
     }
 
     public void actualizar(Ingrediente ingrediente) {
+
         List<Ingrediente> ingredientes = obtenerTodos();
 
         boolean encontrado = false;
 
         for (int i = 0; i < ingredientes.size(); i++) {
+
             if (ingredientes.get(i).getIdIngrediente()
                     == ingrediente.getIdIngrediente()) {
 
@@ -94,23 +95,10 @@ public class IngredienteRepository {
 
         if (!encontrado) {
             throw new IllegalArgumentException(
-                    "Ingrediente no encontrado");
+                    "Ingrediente no encontrado"
+            );
         }
 
-        guardarTodos(ingredientes);
-    }
-
-    private void guardarTodos(List<Ingrediente> ingredientes) {
-        try {
-            Files.createDirectories(archivo.getParent());
-
-            String json = gson.toJson(ingredientes);
-
-            Files.writeString(archivo, json);
-
-        } catch (IOException e) {
-            throw new RuntimeException(
-                    "Error al guardar los ingredientes", e);
-        }
+        dataManager.guardar(ARCHIVO, ingredientes);
     }
 }

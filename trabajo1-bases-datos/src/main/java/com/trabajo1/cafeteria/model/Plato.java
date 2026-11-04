@@ -5,16 +5,14 @@ public class Plato {
 
     private int idPlato;
     private String nombre;
-    private int idReceta;
     private boolean activo;
 
     public Plato() {
     }
 
-    public Plato(int idPlato, String nombre, int idReceta) {
+    public Plato(int idPlato, String nombre) {
         this.idPlato = idPlato;
         this.nombre = nombre;
-        this.idReceta = idReceta;
         this.activo = true;
     }
 
@@ -26,20 +24,12 @@ public class Plato {
         return nombre;
     }
 
-    public int getIdReceta() {
-        return idReceta;
-    }
-
     public boolean isActivo() {
         return activo;
     }
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
-    }
-
-    public void setIdReceta(int idReceta) {
-        this.idReceta = idReceta;
     }
 
     public void setActivo(boolean activo) {
@@ -51,7 +41,6 @@ public class Plato {
         return "Plato{" +
                 "idPlato=" + idPlato +
                 ", nombre='" + nombre + '\'' +
-                ", idReceta=" + idReceta +
                 ", activo=" + activo +
                 '}';
     }

@@ -23,23 +23,40 @@ public class JsonDataManager {
 
     public JsonDataManager() {
 
-        JsonSerializer<LocalDateTime> serializador =
-                (fecha, tipo, contexto) ->
-                        contexto.serialize(
-                                fecha.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME)
-                        );
+        class AdaptadorFecha implements
+                JsonSerializer<LocalDateTime>,
+                JsonDeserializer<LocalDateTime> {
 
-        JsonDeserializer<LocalDateTime> deserializador =
-                (json, tipo, contexto) ->
-                        LocalDateTime.parse(
-                                json.getAsString(),
-                                DateTimeFormatter.ISO_LOCAL_DATE_TIME
-                        );
+            @Override
+            public com.google.gson.JsonElement serialize(
+                    LocalDateTime fecha,
+                    Type tipo,
+                    com.google.gson.JsonSerializationContext contexto) {
+
+                return contexto.serialize(
+                        fecha.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME)
+                );
+            }
+
+            @Override
+            public LocalDateTime deserialize(
+                    com.google.gson.JsonElement json,
+                    Type tipo,
+                    com.google.gson.JsonDeserializationContext contexto) {
+
+                return LocalDateTime.parse(
+                        json.getAsString(),
+                        DateTimeFormatter.ISO_LOCAL_DATE_TIME
+                );
+            }
+        }
 
         this.gson = new GsonBuilder()
                 .setPrettyPrinting()
-                .registerTypeAdapter(LocalDateTime.class, serializador)
-                .registerTypeAdapter(LocalDateTime.class, deserializador)
+                .registerTypeAdapter(
+                        LocalDateTime.class,
+                        new AdaptadorFecha()
+                )
                 .create();
     }
 

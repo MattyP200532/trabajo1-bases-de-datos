@@ -58,4 +58,15 @@ public class Abastecimiento {
     public void setFecha(LocalDateTime fecha) {
         this.fecha = fecha;
     }
+    
+@Override
+public String toString() {
+    return "Abastecimiento{" +
+            "idAbastecimiento=" + idAbastecimiento +
+            ", idIngrediente=" + idIngrediente +
+            ", cantidad=" + cantidad +
+            ", costoUnitario=" + costoUnitario +
+            ", fecha=" + fecha +
+            '}';
+}
 }

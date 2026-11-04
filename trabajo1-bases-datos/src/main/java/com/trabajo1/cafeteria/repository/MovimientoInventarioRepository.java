@@ -1,4 +1,3 @@
-
 package com.trabajo1.cafeteria.repository;
 
 import com.google.gson.reflect.TypeToken;
@@ -22,17 +21,34 @@ public class MovimientoInventarioRepository {
         Type tipo = new TypeToken<List<MovimientoInventario>>() {
         }.getType();
 
-        return dataManager.cargar(
+        List<MovimientoInventario> lista = dataManager.cargar(
                 ARCHIVO,
                 tipo,
                 new ArrayList<>()
         );
+
+        return lista == null ? new ArrayList<>() : lista;
     }
 
     public Optional<MovimientoInventario> buscarPorId(int id) {
         return obtenerTodos().stream()
                 .filter(m -> m.getIdMovimiento() == id)
                 .findFirst();
+    }
+
+    // Generar el siguiente identificador
+    public int obtenerSiguienteId() {
+
+        List<MovimientoInventario> lista = obtenerTodos();
+
+        if (lista.isEmpty()) {
+            return 1;
+        }
+
+        return lista.stream()
+                .mapToInt(MovimientoInventario::getIdMovimiento)
+                .max()
+                .orElse(0) + 1;
     }
 
     public void guardar(MovimientoInventario movimiento) {
