@@ -5,7 +5,9 @@ import com.trabajo1.cafeteria.model.Abastecimiento;
 import com.trabajo1.cafeteria.model.Ingrediente;
 import com.trabajo1.cafeteria.repository.AbastecimientoRepository;
 import com.trabajo1.cafeteria.repository.IngredienteRepository;
-
+import com.trabajo1.cafeteria.model.MovimientoInventario;
+import com.trabajo1.cafeteria.model.TipoMovimiento;
+import com.trabajo1.cafeteria.repository.MovimientoInventarioRepository;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
@@ -14,10 +16,12 @@ public class AbastecimientoService {
 
     private final AbastecimientoRepository abastecimientoRepository;
     private final IngredienteRepository ingredienteRepository;
+    private final MovimientoInventarioRepository movimientoRepository;
 
     public AbastecimientoService() {
         this.abastecimientoRepository = new AbastecimientoRepository();
         this.ingredienteRepository = new IngredienteRepository();
+        this.movimientoRepository = new MovimientoInventarioRepository();
     }
 
     public void registrarAbastecimiento(
@@ -58,11 +62,23 @@ public class AbastecimientoService {
 
         ingrediente.setStockActual(nuevoStock);
 
-        // Guardar el abastecimiento
-        abastecimientoRepository.guardar(abastecimiento);
+       // Guardar el abastecimiento
+abastecimientoRepository.guardar(abastecimiento);
 
-        // Actualizar el ingrediente
-        ingredienteRepository.actualizar(ingrediente);
+// Actualizar el ingrediente
+ingredienteRepository.actualizar(ingrediente);
+
+// Registrar movimiento de inventario
+MovimientoInventario movimiento = new MovimientoInventario(
+        abastecimiento.getIdAbastecimiento(),
+        abastecimiento.getIdIngrediente(),
+        TipoMovimiento.ABASTECIMIENTO,
+        abastecimiento.getCantidad(),
+        abastecimiento.getFecha(),
+        "Ingreso por abastecimiento"
+);
+
+movimientoRepository.guardar(movimiento);
     }
 
     public List<Abastecimiento> obtenerTodos() {
