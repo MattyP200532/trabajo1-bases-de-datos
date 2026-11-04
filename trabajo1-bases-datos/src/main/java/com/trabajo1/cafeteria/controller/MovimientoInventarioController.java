@@ -80,7 +80,9 @@ public class MovimientoInventarioController {
             }
 
         } catch (NumberFormatException e) {
-            System.out.println("Debe ingresar un ID numérico.");
-        }
+    System.out.println("Debe ingresar un ID numérico.");
+} catch (IllegalArgumentException e) {
+    System.out.println(e.getMessage());
+}
     }
 }

@@ -107,6 +107,11 @@ public class AbastecimientoService {
                     "El abastecimiento no puede ser nulo"
             );
         }
+            if (abastecimiento.getIdAbastecimiento() <= 0) {
+        throw new IllegalArgumentException(
+                "El identificador del abastecimiento debe ser positivo"
+        );
+    }
 
         if (abastecimiento.getCantidad() == null ||
                 abastecimiento.getCantidad().compareTo(

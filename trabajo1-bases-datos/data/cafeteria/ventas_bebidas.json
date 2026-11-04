@@ -1,0 +1,16 @@
+[
+  {
+    "idVenta": 1,
+    "fecha": "2026-11-04T11:24:14.5758502",
+    "detalles": [
+      {
+        "idDetalleVenta": 1,
+        "idBebida": 2,
+        "cantidad": 5,
+        "precioUnitario": 0.58,
+        "subtotal": 2.90
+      }
+    ],
+    "total": 2.90
+  }
+]

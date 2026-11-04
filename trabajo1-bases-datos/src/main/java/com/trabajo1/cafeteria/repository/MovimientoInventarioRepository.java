@@ -52,6 +52,18 @@ public class MovimientoInventarioRepository {
     }
 
     public void guardar(MovimientoInventario movimiento) {
+
+        if (movimiento == null) {
+    throw new IllegalArgumentException(
+            "El movimiento no puede ser nulo"
+    );
+}
+
+if (movimiento.getIdMovimiento() <= 0) {
+    throw new IllegalArgumentException(
+            "El identificador del movimiento debe ser positivo"
+    );
+}
         List<MovimientoInventario> lista = obtenerTodos();
 
         boolean existe = lista.stream()

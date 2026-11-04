@@ -24,9 +24,16 @@ public class MovimientoInventarioService {
     }
 
     public List<MovimientoInventario> obtenerPorIngrediente(int idIngrediente) {
-        return movimientoRepository.obtenerTodos()
-                .stream()
-                .filter(m -> m.getIdIngrediente() == idIngrediente)
-                .toList();
+
+    if (idIngrediente <= 0) {
+        throw new IllegalArgumentException(
+                "El identificador del ingrediente debe ser positivo"
+        );
     }
+
+    return movimientoRepository.obtenerTodos()
+            .stream()
+            .filter(m -> m.getIdIngrediente() == idIngrediente)
+            .toList();
+}
 }

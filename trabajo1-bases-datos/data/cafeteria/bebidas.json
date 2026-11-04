@@ -1,0 +1,16 @@
+[
+  {
+    "idBebida": 1,
+    "nombre": "Coca Cola",
+    "stockActual": 20,
+    "precioFijo": 1.00,
+    "activa": false
+  },
+  {
+    "idBebida": 2,
+    "nombre": "Agua",
+    "stockActual": 25,
+    "precioFijo": 0.50,
+    "activa": true
+  }
+]

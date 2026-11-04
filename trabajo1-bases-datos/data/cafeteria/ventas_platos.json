@@ -1,0 +1,16 @@
+[
+  {
+    "idVenta": 1,
+    "fecha": "2026-11-04T10:44:18.3099203",
+    "detalles": [
+      {
+        "idDetalleVenta": 1,
+        "idPlato": 1,
+        "cantidad": 1,
+        "precioUnitario": 118.50,
+        "subtotal": 118.50
+      }
+    ],
+    "total": 118.50
+  }
+]

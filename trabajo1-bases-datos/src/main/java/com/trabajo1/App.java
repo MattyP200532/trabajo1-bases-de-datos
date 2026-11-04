@@ -1,6 +1,9 @@
 
 package com.trabajo1;
 
+import com.trabajo1.cafeteria.controller.ReporteController;
+import com.trabajo1.cafeteria.controller.BebidaController;
+import com.trabajo1.cafeteria.controller.VentaBebidasController;
 import com.trabajo1.cafeteria.controller.RecetaController;
 import com.trabajo1.cafeteria.controller.PlatoController;
 import com.trabajo1.cafeteria.controller.VentaPlatosController;
@@ -21,6 +24,12 @@ AbastecimientoController abastecimientoController = new AbastecimientoController
 MovimientoInventarioController movimientoController = new MovimientoInventarioController(scanner);
 VentaPlatosController ventaPlatosController = new VentaPlatosController(scanner);
          RecetaController recetaController = new RecetaController(scanner);
+         VentaBebidasController ventaBebidasController =
+        new VentaBebidasController(scanner);
+        BebidaController bebidaController =
+        new BebidaController(scanner);
+        ReporteController reporteController =
+        new ReporteController(scanner);
 
          int opcion;
 
@@ -122,9 +131,51 @@ VentaPlatosController ventaPlatosController = new VentaPlatosController(scanner)
 
     break;
 
-                    case 3:
-                        System.out.println("Gestion de bebidas");
-                        break;
+                    
+case 3:
+    int opcionBebida;
+
+    do {
+        System.out.println("\n--- GESTIONAR BEBIDAS ---");
+        System.out.println("1. Registrar bebida");
+        System.out.println("2. Listar bebidas");
+        System.out.println("3. Desactivar bebida");
+        System.out.println("0. Volver al menu principal");
+        System.out.print("Seleccione una opcion: ");
+
+        try {
+            opcionBebida = Integer.parseInt(scanner.nextLine());
+
+            switch (opcionBebida) {
+                case 1:
+                    bebidaController.registrarBebida();
+                    break;
+
+                case 2:
+                    bebidaController.listarBebidas();
+                    break;
+
+                case 3:
+                    bebidaController.desactivarBebida();
+                    break;
+
+                case 0:
+                    System.out.println("Volviendo al menu principal...");
+                    break;
+
+                default:
+                    System.out.println("Opcion no valida.");
+            }
+
+        } catch (NumberFormatException e) {
+            opcionBebida = -1;
+            System.out.println("Debe ingresar un numero.");
+        }
+
+    } while (opcionBebida != 0);
+
+    break;
+
 
                     case 4:
     int opcionReceta;
@@ -246,12 +297,48 @@ VentaPlatosController ventaPlatosController = new VentaPlatosController(scanner)
     break;
 
                     case 7:
-                        System.out.println("Venta de bebidas");
-                        break;
+    int opcionVentaBebidas;
+
+    do {
+        System.out.println("\n--- GESTIONAR VENTAS DE BEBIDAS ---");
+        System.out.println("1. Registrar venta de bebidas");
+        System.out.println("2. Listar ventas de bebidas");
+        System.out.println("0. Volver al menu principal");
+        System.out.print("Seleccione una opcion: ");
+
+        try {
+            opcionVentaBebidas =
+                    Integer.parseInt(scanner.nextLine());
+
+            switch (opcionVentaBebidas) {
+                case 1:
+                    ventaBebidasController.registrarVenta();
+                    break;
+
+                case 2:
+                    ventaBebidasController.listarVentas();
+                    break;
+
+                case 0:
+                    System.out.println("Volviendo al menu principal...");
+                    break;
+
+                default:
+                    System.out.println("Opcion no valida.");
+            }
+
+        } catch (NumberFormatException e) {
+            opcionVentaBebidas = -1;
+            System.out.println("Debe ingresar un numero.");
+        }
+
+    } while (opcionVentaBebidas != 0);
+
+    break;
 
                     case 8:
-                        System.out.println("Consulta de reportes");
-                        break;
+    reporteController.mostrarMenu();
+    break;
                     
 case 9:
     int opcionMovimiento;

@@ -5,5 +5,12 @@
     "cantidad": 50,
     "costoUnitario": 0.75,
     "fecha": "2026-11-03T23:27:16.0919648"
+  },
+  {
+    "idAbastecimiento": 2,
+    "idIngrediente": 1,
+    "cantidad": 10,
+    "costoUnitario": 0.75,
+    "fecha": "2026-11-04T10:30:07.7479712"
   }
 ]
