@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="com.trabajo1.biblioteca.service.PrestamoServiceTest" time="0.074" tests="2" errors="0" skipped="0" failures="0" flakes="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="com.trabajo1.biblioteca.service.PrestamoServiceTest" time="0.043" tests="2" errors="0" skipped="0" failures="0" flakes="0">
   <properties>
     <property name="java.specification.version" value="27"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="ES"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-27.0.1.0.3\bin"/>
-    <property name="sun.java.command" value="C:\Users\ASUS\AppData\Local\Temp\surefire8105009298350896310\surefirebooter-20261103203339630_3.jar C:\Users\ASUS\AppData\Local\Temp\surefire8105009298350896310 2026-11-03T20-33-38_203-jvmRun1 surefire-20261103203339630_1tmp surefire_0-20261103203339630_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\ASUS\AppData\Local\Temp\surefire15309317395657484293\surefirebooter-20261103210431100_3.jar C:\Users\ASUS\AppData\Local\Temp\surefire15309317395657484293 2026-11-03T21-04-30_987-jvmRun1 surefire-20261103210431100_1tmp surefire_0-20261103210431100_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Important\Universidad\4to Semestre\Base de Datos\trabajo1-bases-de-datos\trabajo1-bases-datos\target\test-classes;C:\Important\Universidad\4to Semestre\Base de Datos\trabajo1-bases-de-datos\trabajo1-bases-datos\target\classes;C:\Users\ASUS\.m2\repository\com\google\code\gson\gson\2.13.2\gson-2.13.2.jar;C:\Users\ASUS\.m2\repository\com\google\errorprone\error_prone_annotations\2.41.0\error_prone_annotations-2.41.0.jar;C:\Users\ASUS\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\ASUS\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\ASUS\AppData\Local\Temp\surefire8105009298350896310\surefirebooter-20261103203339630_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\ASUS\AppData\Local\Temp\surefire15309317395657484293\surefirebooter-20261103210431100_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="27.0.1.0.3+1-2"/>
@@ -60,6 +60,6 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="71.0"/>
   </properties>
-  <testcase name="debeRegistrarPrestamoCorrectamente" classname="com.trabajo1.biblioteca.service.PrestamoServiceTest" time="0.057"/>
-  <testcase name="debeGenerarMultaPorDevolucionTardia" classname="com.trabajo1.biblioteca.service.PrestamoServiceTest" time="0.004"/>
+  <testcase name="debeRegistrarPrestamoCorrectamente" classname="com.trabajo1.biblioteca.service.PrestamoServiceTest" time="0.039"/>
+  <testcase name="debeGenerarMultaPorDevolucionTardia" classname="com.trabajo1.biblioteca.service.PrestamoServiceTest" time="0.003"/>
 </testsuite>
