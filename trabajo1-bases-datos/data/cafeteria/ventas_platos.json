@@ -1,0 +1,114 @@
+[
+  {
+    "idVenta": 1,
+    "fecha": "2026-10-27T12:15:00",
+    "detalles": [
+      {
+        "idDetalleVenta": 1,
+        "idPlato": 1,
+        "cantidad": 8,
+        "precioUnitario": 2.1,
+        "subtotal": 16.8
+      },
+      {
+        "idDetalleVenta": 2,
+        "idPlato": 2,
+        "cantidad": 5,
+        "precioUnitario": 2.24,
+        "subtotal": 11.2
+      }
+    ],
+    "total": 28
+  },
+  {
+    "idVenta": 2,
+    "fecha": "2026-10-29T13:40:00",
+    "detalles": [
+      {
+        "idDetalleVenta": 3,
+        "idPlato": 3,
+        "cantidad": 7,
+        "precioUnitario": 1.42,
+        "subtotal": 9.94
+      },
+      {
+        "idDetalleVenta": 4,
+        "idPlato": 4,
+        "cantidad": 4,
+        "precioUnitario": 1.68,
+        "subtotal": 6.72
+      }
+    ],
+    "total": 16.66
+  },
+  {
+    "idVenta": 3,
+    "fecha": "2026-11-01T12:20:00",
+    "detalles": [
+      {
+        "idDetalleVenta": 5,
+        "idPlato": 5,
+        "cantidad": 6,
+        "precioUnitario": 2.4,
+        "subtotal": 14.4
+      },
+      {
+        "idDetalleVenta": 6,
+        "idPlato": 1,
+        "cantidad": 5,
+        "precioUnitario": 2.1,
+        "subtotal": 10.5
+      }
+    ],
+    "total": 24.9
+  },
+  {
+    "idVenta": 4,
+    "fecha": "2026-11-03T13:00:00",
+    "detalles": [
+      {
+        "idDetalleVenta": 7,
+        "idPlato": 2,
+        "cantidad": 4,
+        "precioUnitario": 2.24,
+        "subtotal": 8.96
+      },
+      {
+        "idDetalleVenta": 8,
+        "idPlato": 3,
+        "cantidad": 6,
+        "precioUnitario": 1.42,
+        "subtotal": 8.52
+      },
+      {
+        "idDetalleVenta": 9,
+        "idPlato": 4,
+        "cantidad": 3,
+        "precioUnitario": 1.68,
+        "subtotal": 5.04
+      }
+    ],
+    "total": 22.52
+  },
+  {
+    "idVenta": 5,
+    "fecha": "2026-11-04T10:44:00",
+    "detalles": [
+      {
+        "idDetalleVenta": 10,
+        "idPlato": 1,
+        "cantidad": 2,
+        "precioUnitario": 2.1,
+        "subtotal": 4.2
+      },
+      {
+        "idDetalleVenta": 11,
+        "idPlato": 5,
+        "cantidad": 2,
+        "precioUnitario": 2.4,
+        "subtotal": 4.8
+      }
+    ],
+    "total": 9
+  }
+]

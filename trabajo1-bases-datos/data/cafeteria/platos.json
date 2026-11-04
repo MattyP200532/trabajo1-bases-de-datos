@@ -1,0 +1,27 @@
+[
+  {
+    "idPlato": 1,
+    "nombre": "Chaulafán",
+    "activo": true
+  },
+  {
+    "idPlato": 2,
+    "nombre": "Arroz con pollo",
+    "activo": true
+  },
+  {
+    "idPlato": 3,
+    "nombre": "Bolón de verde con queso",
+    "activo": true
+  },
+  {
+    "idPlato": 4,
+    "nombre": "Tigrillo",
+    "activo": true
+  },
+  {
+    "idPlato": 5,
+    "nombre": "Seco de pollo",
+    "activo": true
+  }
+]

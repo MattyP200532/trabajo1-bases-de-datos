@@ -1,0 +1,14 @@
+# Archivos compilados
+*.class
+
+# Archivos generados por Maven
+target/
+
+# Configuracion local de VS Code
+.vscode/
+
+# Archivos temporales
+*.tmp
+
+# Logs
+*.log

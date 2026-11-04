@@ -24,4 +24,11 @@ hs_err_pid*
 replay_pid*
 
 # Archivos generados por Maven
+target/
+
+# Configuración local de Visual Studio Code
+.vscode/
+
+# Archivos temporales
+*.tmp
 **/target/
