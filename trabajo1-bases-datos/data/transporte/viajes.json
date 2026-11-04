@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "ruta": "Ibarra-Quito",
+    "fechaSalida": "2026-11-15T08:00:00",
+    "capacidad": 40,
+    "tarifaBase": 10.0,
+    "tipo": "DIRECTO"
+  },
+  {
+    "id": 2,
+    "ruta": "Ibarra-Otavalo",
+    "fechaSalida": "2026-11-20T10:00:00",
+    "capacidad": 20,
+    "tarifaBase": 10.0,
+    "tipo": "CON_PARADAS"
+  }
+]
