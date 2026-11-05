@@ -1,0 +1,187 @@
+[
+  {
+    "idReceta": 1,
+    "idPlato": 1,
+    "detalles": [
+      {
+        "idDetalleReceta": 1,
+        "idIngrediente": 2,
+        "cantidadNecesaria": 0.18
+      },
+      {
+        "idDetalleReceta": 2,
+        "idIngrediente": 3,
+        "cantidadNecesaria": 0.12
+      },
+      {
+        "idDetalleReceta": 3,
+        "idIngrediente": 4,
+        "cantidadNecesaria": 0.04
+      },
+      {
+        "idDetalleReceta": 4,
+        "idIngrediente": 5,
+        "cantidadNecesaria": 0.02
+      },
+      {
+        "idDetalleReceta": 5,
+        "idIngrediente": 6,
+        "cantidadNecesaria": 0.03
+      },
+      {
+        "idDetalleReceta": 6,
+        "idIngrediente": 7,
+        "cantidadNecesaria": 0.01
+      },
+      {
+        "idDetalleReceta": 7,
+        "idIngrediente": 8,
+        "cantidadNecesaria": 0.01
+      },
+      {
+        "idDetalleReceta": 8,
+        "idIngrediente": 1,
+        "cantidadNecesaria": 0.005
+      }
+    ]
+  },
+  {
+    "idReceta": 2,
+    "idPlato": 2,
+    "detalles": [
+      {
+        "idDetalleReceta": 9,
+        "idIngrediente": 2,
+        "cantidadNecesaria": 0.18
+      },
+      {
+        "idDetalleReceta": 10,
+        "idIngrediente": 3,
+        "cantidadNecesaria": 0.15
+      },
+      {
+        "idDetalleReceta": 11,
+        "idIngrediente": 5,
+        "cantidadNecesaria": 0.03
+      },
+      {
+        "idDetalleReceta": 12,
+        "idIngrediente": 6,
+        "cantidadNecesaria": 0.04
+      },
+      {
+        "idDetalleReceta": 13,
+        "idIngrediente": 7,
+        "cantidadNecesaria": 0.02
+      },
+      {
+        "idDetalleReceta": 14,
+        "idIngrediente": 11,
+        "cantidadNecesaria": 0.05
+      },
+      {
+        "idDetalleReceta": 15,
+        "idIngrediente": 1,
+        "cantidadNecesaria": 0.005
+      }
+    ]
+  },
+  {
+    "idReceta": 3,
+    "idPlato": 3,
+    "detalles": [
+      {
+        "idDetalleReceta": 16,
+        "idIngrediente": 9,
+        "cantidadNecesaria": 0.25
+      },
+      {
+        "idDetalleReceta": 17,
+        "idIngrediente": 10,
+        "cantidadNecesaria": 0.07
+      },
+      {
+        "idDetalleReceta": 18,
+        "idIngrediente": 7,
+        "cantidadNecesaria": 0.01
+      },
+      {
+        "idDetalleReceta": 19,
+        "idIngrediente": 1,
+        "cantidadNecesaria": 0.005
+      }
+    ]
+  },
+  {
+    "idReceta": 4,
+    "idPlato": 4,
+    "detalles": [
+      {
+        "idDetalleReceta": 20,
+        "idIngrediente": 9,
+        "cantidadNecesaria": 0.2
+      },
+      {
+        "idDetalleReceta": 21,
+        "idIngrediente": 4,
+        "cantidadNecesaria": 0.08
+      },
+      {
+        "idDetalleReceta": 22,
+        "idIngrediente": 10,
+        "cantidadNecesaria": 0.05
+      },
+      {
+        "idDetalleReceta": 23,
+        "idIngrediente": 5,
+        "cantidadNecesaria": 0.02
+      },
+      {
+        "idDetalleReceta": 24,
+        "idIngrediente": 7,
+        "cantidadNecesaria": 0.01
+      },
+      {
+        "idDetalleReceta": 25,
+        "idIngrediente": 1,
+        "cantidadNecesaria": 0.005
+      }
+    ]
+  },
+  {
+    "idReceta": 5,
+    "idPlato": 5,
+    "detalles": [
+      {
+        "idDetalleReceta": 26,
+        "idIngrediente": 2,
+        "cantidadNecesaria": 0.15
+      },
+      {
+        "idDetalleReceta": 27,
+        "idIngrediente": 3,
+        "cantidadNecesaria": 0.18
+      },
+      {
+        "idDetalleReceta": 28,
+        "idIngrediente": 5,
+        "cantidadNecesaria": 0.03
+      },
+      {
+        "idDetalleReceta": 29,
+        "idIngrediente": 11,
+        "cantidadNecesaria": 0.05
+      },
+      {
+        "idDetalleReceta": 30,
+        "idIngrediente": 7,
+        "cantidadNecesaria": 0.02
+      },
+      {
+        "idDetalleReceta": 31,
+        "idIngrediente": 1,
+        "cantidadNecesaria": 0.005
+      }
+    ]
+  }
+]

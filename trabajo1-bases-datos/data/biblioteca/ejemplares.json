@@ -1,0 +1,30 @@
+[
+  {
+    "id": "E001",
+    "materialId": "L001"
+  },
+  {
+    "id": "E002",
+    "materialId": "L001"
+  },
+  {
+    "id": "E003",
+    "materialId": "L002"
+  },
+  {
+    "id": "E004",
+    "materialId": "L003"
+  },
+  {
+    "id": "E005",
+    "materialId": "L003"
+  },
+  {
+    "id": "E006",
+    "materialId": "R001"
+  },
+  {
+    "id": "E007",
+    "materialId": "R002"
+  }
+]

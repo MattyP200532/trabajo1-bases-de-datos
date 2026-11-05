@@ -1,0 +1,101 @@
+[
+  {
+    "idIngrediente": 1,
+    "nombre": "Sal",
+    "unidadMedida": "KILOGRAMO",
+    "stockActual": 0.4,
+    "stockMinimo": 0.3,
+    "costoUnitario": 2,
+    "activo": true
+  },
+  {
+    "idIngrediente": 2,
+    "nombre": "Arroz",
+    "unidadMedida": "KILOGRAMO",
+    "stockActual": 10,
+    "stockMinimo": 5,
+    "costoUnitario": 1,
+    "activo": true
+  },
+  {
+    "idIngrediente": 3,
+    "nombre": "Pollo",
+    "unidadMedida": "KILOGRAMO",
+    "stockActual": 3,
+    "stockMinimo": 2.5,
+    "costoUnitario": 5,
+    "activo": true
+  },
+  {
+    "idIngrediente": 4,
+    "nombre": "Huevo",
+    "unidadMedida": "KILOGRAMO",
+    "stockActual": 0.3,
+    "stockMinimo": 0.5,
+    "costoUnitario": 3.5,
+    "activo": true
+  },
+  {
+    "idIngrediente": 5,
+    "nombre": "Cebolla paiteña",
+    "unidadMedida": "KILOGRAMO",
+    "stockActual": 0.4,
+    "stockMinimo": 0.5,
+    "costoUnitario": 1,
+    "activo": true
+  },
+  {
+    "idIngrediente": 6,
+    "nombre": "Zanahoria",
+    "unidadMedida": "KILOGRAMO",
+    "stockActual": 0.8,
+    "stockMinimo": 0.5,
+    "costoUnitario": 1,
+    "activo": true
+  },
+  {
+    "idIngrediente": 7,
+    "nombre": "Aceite vegetal",
+    "unidadMedida": "LITRO",
+    "stockActual": 0.9,
+    "stockMinimo": 1,
+    "costoUnitario": 3,
+    "activo": true
+  },
+  {
+    "idIngrediente": 8,
+    "nombre": "Salsa de soya",
+    "unidadMedida": "LITRO",
+    "stockActual": 0.2,
+    "stockMinimo": 0.25,
+    "costoUnitario": 4,
+    "activo": true
+  },
+  {
+    "idIngrediente": 9,
+    "nombre": "Plátano verde",
+    "unidadMedida": "KILOGRAMO",
+    "stockActual": 3,
+    "stockMinimo": 2,
+    "costoUnitario": 1,
+    "activo": true
+  },
+  {
+    "idIngrediente": 10,
+    "nombre": "Queso fresco",
+    "unidadMedida": "KILOGRAMO",
+    "stockActual": 0.35,
+    "stockMinimo": 0.5,
+    "costoUnitario": 6,
+    "activo": true
+  },
+  {
+    "idIngrediente": 11,
+    "nombre": "Tomate riñón",
+    "unidadMedida": "KILOGRAMO",
+    "stockActual": 1.5,
+    "stockMinimo": 1,
+    "costoUnitario": 1,
+    "activo": true
+  }
+]
