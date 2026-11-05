@@ -1,0 +1,69 @@
+{
+  "socios": [
+    {
+      "id": "S001",
+      "nombre": "Ana Lopez",
+      "cedula": "1000000000"
+    }
+  ],
+  "cuentas": [
+    {
+      "tipo": "AHORROS",
+      "numeroCuenta": "A001",
+      "idSocio": "S001",
+      "saldo": "75.25",
+      "activa": true
+    },
+    {
+      "tipo": "CORRIENTE",
+      "numeroCuenta": "C001",
+      "idSocio": "S001",
+      "saldo": "35.00",
+      "activa": true
+    }
+  ],
+  "movimientos": [
+    {
+      "id": "225e0d79-f46f-4704-8f5a-02abc98c65f5",
+      "numeroCuenta": "A001",
+      "tipo": "DEPOSITO",
+      "monto": 100.00,
+      "saldoPosterior": 100.00,
+      "fechaHora": "2026-11-03T00:34:42.292242300"
+    },
+    {
+      "id": "d072f634-49df-45c7-8d59-1a3ff7dfce53",
+      "numeroCuenta": "A001",
+      "tipo": "TRANSFERENCIA_ENVIADA",
+      "monto": 25.00,
+      "saldoPosterior": 75.00,
+      "fechaHora": "2026-11-03T00:34:42.292242300",
+      "cuentaRelacionada": "C001"
+    },
+    {
+      "id": "f65cd74b-4893-4ac1-b00b-b8aedaab4445",
+      "numeroCuenta": "C001",
+      "tipo": "TRANSFERENCIA_RECIBIDA",
+      "monto": 25.00,
+      "saldoPosterior": 25.00,
+      "fechaHora": "2026-11-03T00:34:42.292242300",
+      "cuentaRelacionada": "A001"
+    },
+    {
+      "id": "1f2988b5-cc2e-47fd-8efb-2f5f02201682",
+      "numeroCuenta": "A001",
+      "tipo": "INTERES",
+      "monto": 0.25,
+      "saldoPosterior": 75.25,
+      "fechaHora": "2026-11-03T08:51:22.277935400"
+    },
+    {
+      "id": "fb5de648-988f-4f03-94b9-149edf4401f3",
+      "numeroCuenta": "C001",
+      "tipo": "DEPOSITO",
+      "monto": 10.00,
+      "saldoPosterior": 35.00,
+      "fechaHora": "2026-11-03T10:49:55.170484200"
+    }
+  ]
+}
