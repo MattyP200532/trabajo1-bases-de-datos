@@ -1,0 +1,16 @@
+[
+  {
+    "id": "R001",
+    "artesanoId": "A001",
+    "artesaniaId": "AR001",
+    "cantidad": 10,
+    "fechaRecepcion": "2026-01-01"
+  },
+  {
+    "id": "R002",
+    "artesanoId": "A002",
+    "artesaniaId": "AR002",
+    "cantidad": 5,
+    "fechaRecepcion": "2026-01-01"
+  }
+]

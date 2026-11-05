@@ -1,0 +1,12 @@
+[
+  {
+    "id": "A001",
+    "nombre": "Maria Gonzalez",
+    "comunidadId": "C001"
+  },
+  {
+    "id": "ART001",
+    "nombre": "Juan Perez",
+    "comunidadId": "COM001"
+  }
+]

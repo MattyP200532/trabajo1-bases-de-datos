@@ -1,0 +1,16 @@
+[
+  {
+    "id": "AR001",
+    "nombre": "Pulsera",
+    "tipo": "TEXTIL",
+    "precioVenta": 15.00,
+    "artesanoId": "A001"
+  },
+  {
+    "id": "AR002",
+    "nombre": "Figura de madera",
+    "tipo": "TALLA_MADERA",
+    "precioVenta": 100.00,
+    "artesanoId": "A002"
+  }
+]
